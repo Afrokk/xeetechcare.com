@@ -1,0 +1,24 @@
+{
+  "name": "xeetechcare.com",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint --fix --ext .js,.ts,.vue --ignore-path .gitignore && prettier . --write"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "nuxt": "^3.7.3",
+    "prettier": "^3.0.3"
+  },
+  "type": "module",
+  "dependencies": {
+    "sass": "^1.68.0"
+  }
+}
