@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <h1>xeetechcare.</h1>
-  </div>
+  <NuxtPage />
 </template>
