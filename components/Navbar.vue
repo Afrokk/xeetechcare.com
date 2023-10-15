@@ -6,7 +6,9 @@
       >
         <div class="max-w-screen-lg mx-auto flex justify-between items-center">
           <div class="z-20">
-            <NuxtLink to="/" class="text-black text-2xl font-bold" exact>xeetechcare.</NuxtLink>
+            <NuxtLink to="/" class="text-black text-2xl font-bold" exact
+              >XEE<span class="text-orange-500">TECH</span>CARE</NuxtLink
+            >
           </div>
           <div class="hidden md:flex space-x-4">
             <NuxtLink to="/" class="text-black" :class="{ 'font-bold': isRouteActive('/') }" exact
