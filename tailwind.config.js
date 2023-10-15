@@ -13,7 +13,17 @@ export default {
     'content/**/*.md',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'gray': '#242424',
+      },
+      maxWidth: {
+        'xl': '1140px',
+      },
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+      }
+    },
   },
   plugins: [],
 };
