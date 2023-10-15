@@ -15,14 +15,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        'gray': '#242424',
+        gray: '#242424',
       },
       maxWidth: {
-        'xl': '1140px',
+        xl: '1140px',
       },
       fontFamily: {
-        'inter': ['Inter', 'sans-serif'],
-      }
+        inter: ['Inter', 'sans-serif'],
+      },
     },
   },
   plugins: [],
