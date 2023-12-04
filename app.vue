@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray font-inter">
+  <div class="bg-gray font-inter" id="app">
     <NuxtLayout>
       <Navbar />
       <NuxtPage />
