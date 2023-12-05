@@ -15,7 +15,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        gray: '#242424',
+        gray: '#111215',
       },
       maxWidth: {
         xl: '1140px',

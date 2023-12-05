@@ -2,7 +2,7 @@
   <div class="relative">
     <div>
       <nav
-        class="bg-white mx-auto bg-opacity-85 border border-r-0 border-t-0 border-l-0 border-black p-4 fixed top-0 w-full"
+        class="bg-slate-100 mx-auto bg-opacity-85 border border-r-0 border-t-0 border-l-0 border-black p-4 fixed top-0 w-full"
       >
         <div class="max-w-screen-lg mx-auto flex justify-between items-center">
           <div class="z-20">
@@ -10,7 +10,7 @@
               >XEE<span class="text-orange-500">TECH</span>CARE</NuxtLink
             >
           </div>
-          <div class="hidden md:flex space-x-4">
+          <div class="hidden md:flex space-x-6">
             <NuxtLink to="/" class="text-black" :class="{ 'font-bold': isRouteActive('/') }" exact
               >Home</NuxtLink
             >
