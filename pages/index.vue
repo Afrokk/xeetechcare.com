@@ -10,8 +10,10 @@
           >
             XEETECHCARE
           </h1>
-          <p class="max-w-[600px] text-zinc-200 md:text-xl dark:text-zinc-100 mx-auto">
-            Your one-stop for tech news, reviews, and tutorials.
+          <p
+            class="max-w-[700px] text-sm sm:text-base md:text-lg lg:text-xl dark:text-zinc-100 mx-auto"
+          >
+            Your one-stop for tech news, reviews, and everything in between.
           </p>
         </div>
       </div>
