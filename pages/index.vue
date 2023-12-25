@@ -1,28 +1,105 @@
 <template>
-  <div
-    class="max-w-screen-xl mx-auto text-white flex flex-wrap justify-center items-center h-screen w-screen"
-  >
-    <section class="hero-main w-full py-12 md:py-24 lg:py-32 xl:py-48">
-      <div class="flex flex-col justify-center space-y-8 text-center">
+  <div class="relative h-screen w-screen">
+    <div id="render-dots" class="absolute inset-0 z-10"></div>
+
+    <div
+      class="relative z-20 max-w-screen-xl mx-auto text-white flex flex-wrap justify-center items-center h-screen w-screen"
+    >
+      <section class="hero-main">
         <div class="space-y-2">
           <h1
-            class="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-8xl/none bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500"
+            class="text-4xl text-center font-bold tracking-tighter sm:text-6xl xl:text-8xl/none bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500"
           >
             XEETECHCARE
           </h1>
           <p
-            class="max-w-[700px] text-sm sm:text-base md:text-lg lg:text-xl dark:text-zinc-100 mx-auto"
+            class="max-w-[700px] text-center text-sm sm:text-base md:text-lg lg:text-xl dark:text-zinc-100 mx-auto"
           >
-            Your one-stop for tech news, reviews, and everything in between.
+            Your one-stop for tech news, reviews, and everything in between
           </p>
         </div>
+      </section>
+      <div
+        class="absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer transition-all hover:scale-110 z-30"
+        @click="($refs.nextSection as HTMLElement)?.scrollIntoView({ behavior: 'smooth' })"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          class="h-6 w-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          ></path>
+        </svg>
       </div>
-    </section>
-    <section id="youtube">
-      <p>Placeholder</p>
-    </section>
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-gray to-transparent z-20"
+    ></div>
   </div>
+  <!-- TO DO -->
+  <section
+    id="youtube"
+    ref="nextSection"
+    class="relative z-20 max-w-screen-xl mx-auto text-white flex flex-wrap justify-center items-center h-screen w-screen"
+  >
+    <div class="space-y-2">
+      <h2
+        class="text-4xl text-center font-bold tracking-tighter sm:text-6xl xl:text-8xl/none bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500"
+      >
+        YouTube
+      </h2>
+      <p
+        class="max-w-[700px] text-center text-sm sm:text-base md:text-lg lg:text-xl dark:text-zinc-100 mx-auto"
+      >
+        Check out our latest videos on YouTube.
+      </p>
+      <div class="flex justify-center">
+        <a
+          href="https://www.youtube.com/user/xeetechcare"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-blue-500 underline"
+        >
+          Visit our YouTube channel
+        </a>
+      </div>
+    </div>
+  </section>
 </template>
+
+<script setup lang="ts">
+declare const VANTA;
+import initBackgroundDots from '@/assets/js/backgroundDots.js';
+
+useHead({
+  title: 'XEETECHCARE',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'XEETECHCARE is a name synonymous with mobile technology space on YouTube, with over half a billion views worldwide. Covering smartphone tech news, reviews and everything in between.',
+    },
+  ],
+});
+
+onMounted(() => {
+  initBackgroundDots();
+  document.body.classList.add('overflow-x-hidden');
+});
+
+onBeforeUnmount(() => {
+  const effect = VANTA.DOTS('#render-dots');
+  effect.destroy();
+  document.body.classList.remove('overflow-x-hidden');
+});
+</script>
 
 <style scoped>
 @keyframes fadeInUp {
@@ -36,7 +113,21 @@
   }
 }
 
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1.6s infinite;
+}
+
 .hero-main {
-  animation: fadeInUp 0.2s ease-in-out;
+  animation: fadeInUp 0.5s ease-in-out;
 }
 </style>
