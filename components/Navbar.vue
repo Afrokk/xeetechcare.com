@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative z-30">
     <div>
       <nav
         class="bg-slate-100 mx-auto bg-opacity-85 border border-r-0 border-t-0 border-l-0 border-black p-4 fixed top-0 w-full"
