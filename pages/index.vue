@@ -76,7 +76,7 @@
 
 <script setup lang="ts">
 declare const VANTA;
-import initBackgroundDots from '@/assets/js/backgroundDots.js';
+import initBackgroundDots from '@/assets/js/initBackground.js';
 
 useHead({
   title: 'XEETECHCARE',
