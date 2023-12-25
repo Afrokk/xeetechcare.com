@@ -5,3 +5,15 @@
     <h1>About.</h1>
   </div>
 </template>
+
+<script setup lang="ts">
+useHead({
+  title: 'About | XEETECHCARE',
+  meta: [
+    {
+      name: 'description',
+      content: 'The story behind XEETECHCARE.',
+    },
+  ],
+});
+</script>
