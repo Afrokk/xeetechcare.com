@@ -59,7 +59,7 @@
               v-if="mobileMenuOpen"
               @click="!toggleMobileMenu"
               xmlns="http://www.w3.org/2000/svg"
-              class="w-14 pr-0 transition-transform transform text-black text-lg px-4 bg-white bg-opacity-85 rounded-full absolute top-3 right-3 z-10"
+              class="w-14 pr-0 transition-transform transform text-black text-lg px-4 bg-slate-100 bg-opacity-85 rounded-full absolute top-3 right-3 z-10"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
