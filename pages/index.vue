@@ -8,9 +8,10 @@
       <section class="hero-main">
         <div class="space-y-2">
           <h1
-            class="text-4xl text-center font-bold tracking-tighter sm:text-6xl xl:text-8xl/none bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500"
+            id="animated-text"
+            class="text-4xl text-center font-bold tracking-tighter sm:text-6xl xl:text-8xl/none"
           >
-            XEETECHCARE
+            <span class="gradient-text">XEETECHCARE</span>
           </h1>
           <p
             class="max-w-[700px] text-center text-sm sm:text-base md:text-lg lg:text-xl dark:text-zinc-100 mx-auto"
@@ -76,6 +77,7 @@
 
 <script setup lang="ts">
 declare const VANTA;
+import { gsap } from 'gsap';
 import initBackgroundDots from '@/assets/js/initBackground.js';
 
 useHead({
@@ -91,6 +93,13 @@ useHead({
 
 onMounted(() => {
   initBackgroundDots();
+  const text = document.querySelector('.gradient-text');
+  gsap.to(text, {
+    backgroundPosition: '200% 0%',
+    ease: 'power1.inOut',
+    repeat: -1,
+    duration: 3,
+  });
   document.body.classList.add('overflow-x-hidden');
 });
 
@@ -123,6 +132,19 @@ onBeforeUnmount(() => {
   }
 }
 
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #fcb12f 0%,
+    #f97316 25%,
+    #f85300 50%,
+    #f97316 75%,
+    #fcb12f 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .animate-bounce {
   animation: bounce 1.6s infinite;
 }

@@ -18,5 +18,8 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint --fix --ext .js,.ts,.vue --ignore-path .gitignore && prettier . --write"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "gsap": "3"
+  }
 }
