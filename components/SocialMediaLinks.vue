@@ -25,7 +25,7 @@
       <font-awesome-icon :icon="twitterIcon" class="h-5 w-5 sm:h-6 sm:w-6" />
     </a>
     <a
-      href="https://www.tiktok.com/@xeetechcare"
+      href="https://www.tiktok.com/@xeetechcare0"
       target="_blank"
       rel="noopener noreferrer"
       class="bg-zinc-300 text-gray hover:text-pink-600 rounded-full flex items-center justify-center h-8 w-8 sm:h-10 sm:w-10"
