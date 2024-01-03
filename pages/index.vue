@@ -76,9 +76,9 @@
 </template>
 
 <script setup lang="ts">
-declare const VANTA;
 import { gsap } from 'gsap';
 import initBackgroundDots from '@/assets/js/initBackground.js';
+declare const VANTA;
 
 useHead({
   title: 'XEETECHCARE',
@@ -99,6 +99,7 @@ onMounted(() => {
     ease: 'power1.inOut',
     repeat: -1,
     duration: 3,
+    yoyo: true,
   });
   document.body.classList.add('overflow-x-hidden');
 });
