@@ -4,7 +4,7 @@
       <nav
         :class="{
           'bg-transparent': !isScrolled,
-          'bg-zinc-200 border border-r-0 border-t-0 border-l-0 border-black': isScrolled,
+          'bg-zinc-200': isScrolled,
         }"
         class="mx-auto p-4 fixed top-0 w-full transition-all duration-500"
       >
