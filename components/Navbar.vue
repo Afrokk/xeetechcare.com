@@ -4,7 +4,7 @@
       <nav
         :class="{
           'bg-transparent': !isScrolled,
-          'bg-slate-100 border border-r-0 border-t-0 border-l-0 border-black': isScrolled,
+          'bg-zinc-200 border border-r-0 border-t-0 border-l-0 border-black': isScrolled,
         }"
         class="mx-auto p-4 fixed top-0 w-full transition-all duration-500"
       >
@@ -15,7 +15,7 @@
               class="text-2xl font-bold"
               :class="{
                 'text-gray': isScrolled || mobileMenuOpen,
-                'text-slate-100': !isScrolled && !mobileMenuOpen,
+                'text-zinc-200': !isScrolled && !mobileMenuOpen,
               }"
               exact
               >XEE<span class="text-orange-500">TECH</span>CARE</NuxtLink
@@ -23,7 +23,7 @@
           </div>
           <div
             class="hidden md:flex space-x-6"
-            :class="{ 'text-black': isScrolled, 'text-slate-100': !isScrolled }"
+            :class="{ 'text-black': isScrolled, 'text-zinc-200': !isScrolled }"
           >
             <NuxtLink to="/" :class="{ 'font-bold': isRouteActive('/') }" exact>Home</NuxtLink>
             <NuxtLink to="/team" :class="{ 'font-bold': isRouteActive('/team') }" exact
@@ -46,7 +46,7 @@
           <button
             @click="toggleMobileMenu"
             class="p-2 focus:outline-none md:hidden"
-            :class="{ 'text-black': isScrolled, 'text-slate-100': !isScrolled }"
+            :class="{ 'text-black': isScrolled, 'text-zinc-200': !isScrolled }"
           >
             <svg
               v-if="!mobileMenuOpen"
@@ -82,7 +82,7 @@
           </button>
 
           <div
-            class="md:hidden fixed top-0 left-0 w-full h-full bg-white bg-opacity-85 transition-transform transform"
+            class="md:hidden fixed top-0 left-0 w-full h-full bg-slate-100 bg-opacity-85 transition-transform transform"
             :class="{ 'translate-x-full': !mobileMenuOpen }"
           >
             <div class="flex flex-col justify-center h-full p-4 text-center text-black">
