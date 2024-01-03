@@ -184,10 +184,7 @@ import CountUp from 'vue-countup-v3';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Vanta, VantaEffect } from '@/types/vanta';
-
-//@ts-ignore
 import { faYoutube, faInstagram, faTwitter, faTiktok } from '@fortawesome/free-brands-svg-icons';
-//@ts-ignore
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 gsap.registerPlugin(ScrollTrigger);
