@@ -14,10 +14,13 @@
             <span class="gradient-text">XEETECHCARE</span>
           </h1>
           <p
-            class="max-w-[700px] text-center text-sm sm:text-base md:text-lg lg:text-xl dark:text-zinc-100 mx-auto"
+            class="max-w-[700px] text-center text-sm sm:text-base md:text-lg lg:text-xl dark:text-zinc-200 mx-auto"
           >
             Your one-stop for tech news, reviews, and everything in between
           </p>
+          <div class="pt-3">
+            <SocialMediaLinks />
+          </div>
         </div>
       </section>
       <div
@@ -77,8 +80,10 @@
 
 <script setup lang="ts">
 import { gsap } from 'gsap';
-import initBackgroundDots from '@/assets/js/initBackground.js';
-declare const VANTA;
+import { Vanta, VantaEffect } from '@/types/vanta';
+
+declare const VANTA: Vanta;
+let dotEffect: VantaEffect | null = null;
 
 useHead({
   title: 'XEETECHCARE',
@@ -92,7 +97,22 @@ useHead({
 });
 
 onMounted(() => {
-  initBackgroundDots();
+  dotEffect = VANTA.DOTS({
+    el: '#render-dots',
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.0,
+    minWidth: 200.0,
+    scale: 0.5,
+    scaleMobile: 1.0,
+    color: 0xf97416,
+    backgroundColor: 0x111215,
+    size: 1.4,
+    spacing: 23.0,
+    showLines: false,
+  });
+
   const text = document.querySelector('.gradient-text');
   gsap.to(text, {
     backgroundPosition: '200% 0%',
@@ -105,8 +125,9 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  const effect = VANTA.DOTS('#render-dots');
-  effect.destroy();
+  if (dotEffect) {
+    dotEffect.destroy();
+  }
   document.body.classList.remove('overflow-x-hidden');
 });
 </script>
@@ -132,7 +153,6 @@ onBeforeUnmount(() => {
     transform: translateY(-20px);
   }
 }
-
 .gradient-text {
   background: linear-gradient(
     90deg,
