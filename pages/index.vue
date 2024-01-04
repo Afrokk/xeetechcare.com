@@ -175,6 +175,27 @@
           </div>
         </div>
       </div>
+      <div id="brandsSection" class="carousel-container pt-16">
+        <h2
+          class="text-3xl pb-8 text-zinc-200 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none"
+        >
+          Brands we've worked with
+        </h2>
+        <div class="carousel pt-4">
+          <img
+            v-for="logo in logos"
+            :key="logo"
+            :src="logo"
+            class="carousel-item px-5 border-r border-r-zinc-800 border-opacity-20"
+          />
+          <img
+            v-for="logo in logos"
+            :key="logo + 'clone'"
+            :src="logo"
+            class="carousel-item px-5 border-r border-r-zinc-800 border-opacity-20"
+          />
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -213,6 +234,19 @@ let isCountStarted = false;
 let statCurrentVals = ref(Array(6).fill(0));
 
 const statEndVals = [1710000, 115000, 72000, 750, 65000, 630000];
+const logos = [
+  '/assets/img/anker.svg',
+  '/assets/img/oneplus.svg',
+  '/assets/img/oppo.svg',
+  '/assets/img/grammarly.svg',
+  '/assets/img/samsung.svg',
+  '/assets/img/mediatek.svg',
+  '/assets/img/honor.svg',
+  '/assets/img/squarespace.svg',
+  '/assets/img/nordvpn.svg',
+  '/assets/img/huawei.svg',
+  '/assets/img/xiaomi.svg',
+];
 
 onMounted(() => {
   dotEffect = VANTA.DOTS({
@@ -266,6 +300,32 @@ onMounted(() => {
     stagger: 0.2,
     duration: 1,
   });
+
+  const carousel = gsap.timeline({ repeat: -1 });
+  const logoWidth = document.querySelector('.carousel-item')?.clientWidth || 0;
+  const numLogos = logos.length;
+
+  carousel.to('.carousel', {
+    x: `-${logoWidth * numLogos}px`,
+    duration: 30,
+    ease: 'none',
+    repeat: -1,
+    modifiers: {
+      x: function (x) {
+        return (parseFloat(x) % (logoWidth * numLogos)) + 'px';
+      },
+    },
+  });
+
+  gsap.from('#brandsSection', {
+    scrollTrigger: {
+      trigger: '#statisticsSection',
+      start: 'top center',
+    },
+    opacity: 0,
+    duration: 1,
+  });
+
   document.body.classList.add('overflow-x-hidden');
 });
 
@@ -317,5 +377,27 @@ onBeforeUnmount(() => {
 
 .hero-main {
   animation: fadeInUp 0.5s ease-in-out;
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  width: 300%;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: auto;
+  height: 60px;
+}
+
+@media (max-width: 640px) {
+  .carousel {
+    width: 600%;
+  }
 }
 </style>
