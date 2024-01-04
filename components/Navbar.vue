@@ -12,7 +12,7 @@
           <div class="z-20">
             <NuxtLink
               to="/"
-              class="text-2xl font-bold"
+              class="text-xl font-bold sm:text-2xl"
               :class="{
                 'text-gray': isScrolled || mobileMenuOpen,
                 'text-zinc-200': !isScrolled && !mobileMenuOpen,
@@ -22,21 +22,21 @@
             >
           </div>
           <div
-            class="hidden md:flex space-x-6"
+            class="hidden md:flex space-x-6 sm:space-x-10 uppercase tracking-wide"
             :class="{ 'text-black': isScrolled, 'text-zinc-200': !isScrolled }"
           >
             <NuxtLink to="/" :class="{ 'font-bold': isRouteActive('/') }" exact>Home</NuxtLink>
             <NuxtLink to="/team" :class="{ 'font-bold': isRouteActive('/team') }" exact
               >Team</NuxtLink
             >
-            <NuxtLink to="/about" :class="{ 'font-bold': isRouteActive('/about') }" exact
-              >About</NuxtLink
+            <NuxtLink to="/work" :class="{ 'font-bold': isRouteActive('/work') }" exact
+              >Work with Us</NuxtLink
             >
           </div>
 
           <NuxtLink
             to="/contact"
-            class="bg-orange-500 hover:text-white transition-all text-black px-4 py-2 rounded-full hidden md:inline md:ml-4"
+            class="bg-orange-500 uppercase tracking-wide hover:text-white transition-all text-black px-4 py-2 rounded-full hidden md:inline md:ml-4"
             :class="[{ 'hover:bg-gray': isScrolled }, { 'font-bold': isRouteActive('/contact') }]"
             exact
           >
@@ -82,7 +82,7 @@
           </button>
 
           <div
-            class="md:hidden fixed top-0 left-0 w-full h-full bg-slate-100 bg-opacity-85 transition-transform transform"
+            class="md:hidden uppercase tracking-wide fixed top-0 left-0 w-full h-full bg-slate-100 bg-opacity-85 transition-transform transform"
             :class="{ 'translate-x-full': !mobileMenuOpen }"
           >
             <div class="flex flex-col justify-center h-full p-4 text-center text-black">
@@ -91,11 +91,11 @@
               >
               <hr class="border-t border-gray border-opacity-20 my-2" />
               <NuxtLink
-                to="/about"
+                to="/work"
                 class="block py-2"
-                :class="{ 'font-bold': isRouteActive('/about') }"
+                :class="{ 'font-bold': isRouteActive('/work') }"
                 exact
-                >About</NuxtLink
+                >Work with Us</NuxtLink
               >
               <hr class="border-t border-gray border-opacity-20 my-2" />
               <NuxtLink
