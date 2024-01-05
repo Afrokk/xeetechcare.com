@@ -28,4 +28,18 @@
   font-weight: 300;
   font-style: normal;
 }
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #fcb12f 0%,
+    #f97316 25%,
+    #f85300 50%,
+    #f97316 75%,
+    #fcb12f 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 </style>
