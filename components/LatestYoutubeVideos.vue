@@ -1,66 +1,39 @@
 <template>
-  <section class="p-8 bg-gray text-white">
-    <div class="space-y-2" id="animated-text">
-      <h2
-        class="text-3xl pb-8 text-zinc-200 text-center font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-      >
-        Latest on <span class="gradient-text">YouTube</span>
-      </h2>
-    </div>
-    <div v-if="loading" class="flex justify-center items-center">
+  <section class="p-8 bg-gray text-white w-full max-w-screen-xl mx-auto">
+    <div v-if="loading" class="flex justify-center items-center w-full">
       <div
         class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-orange-500"
       ></div>
     </div>
-    <div v-else-if="error" class="text-center text-red-500">
-      {{ error }}
+    <div v-else-if="err" class="text-center text-red-500 w-full">
+      {{ err }}
     </div>
-    <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" ref="videoGrid">
+    <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="video-responsive col-span-2 md:col-span-2 lg:col-span-4 mb-1">
+        <iframe
+          class="w-full h-full"
+          :src="`https://www.youtube.com/embed/${videos[0].snippet.resourceId.videoId}`"
+          frameborder="0"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
       <div
-        class="border border-gray p-4 rounded overflow-hidden shadow-lg"
-        v-for="video in videos"
-        :key="video.id.videoId"
+        v-for="(video, index) in videos.slice(1, 5)"
+        :key="index"
+        class="col-span-2 md:col-span-1"
       >
-        <a :href="`https://www.youtube.com/watch?v=${video.id.videoId}`" target="_blank">
+        <a
+          class="flex items-center justify-center text-center flex-col transform transition duration-100 ease-in-out hover:scale-105 hover:text-orange-500"
+          :href="`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`"
+          target="_blank"
+        >
           <img
+            class="w-full"
             :src="video.snippet.thumbnails.medium.url"
             :alt="video.snippet.title"
-            class="w-full"
           />
-          <h3 class="mt-2">{{ decodeHtml(video.snippet.title) }}</h3>
-          <template>
-            <section class="p-8 bg-gray-100">
-              <h2 class="text-2xl mb-4 text-center">Latest on YouTube</h2>
-              <div v-if="loading" class="flex justify-center items-center">
-                <div
-                  class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-purple-500"
-                ></div>
-              </div>
-              <div v-else-if="error" class="text-center text-red-500">
-                {{ error }}
-              </div>
-              <div
-                v-else
-                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
-                ref="videoGrid"
-              >
-                <div
-                  class="border border-gray p-4 rounded overflow-hidden shadow-lg"
-                  v-for="video in videos"
-                  :key="video.id.videoId"
-                >
-                  <a :href="`https://www.youtube.com/watch?v=${video.id.videoId}`" target="_blank">
-                    <img
-                      :src="video.snippet.thumbnails.medium.url"
-                      :alt="video.snippet.title"
-                      class="w-full"
-                    />
-                    <h3 class="mt-2">{{ video.snippet.title }}</h3>
-                  </a>
-                </div>
-              </div>
-            </section>
-          </template>
+          <h3 class="pt-4">{{ video.snippet.title }}</h3>
         </a>
       </div>
     </div>
@@ -68,38 +41,40 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
 import { Video } from '@/types/video';
 
-const youtubeApiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
 const videos = ref<Video[]>([]);
-const videoGrid = ref(null);
+const err = ref<string | null>(null);
 const loading = ref(true);
-const error = ref<string | null>(null);
-
-function decodeHtml(html: string) {
-  const text = document.createElement('textarea');
-  text.innerHTML = html;
-  return text.value;
-}
 
 onMounted(async () => {
   try {
-    const baseUrl = 'https://www.googleapis.com/youtube/v3/search';
-    const params = new URLSearchParams({
-      part: 'snippet',
-      channelId: 'UCTqMx8l2TtdZ7_1A40qrFiQ',
-      maxResults: '5',
-      order: 'date',
-      key: youtubeApiKey,
-    });
-    const response = await fetch(`${baseUrl}?${params}`);
+    const response = await fetch('/api/videos');
+    if (!response.ok) {
+      throw new Error('Failed to fetch videos');
+    }
     const data = await response.json();
-    videos.value = data.items;
-  } catch (err) {
-    error.value = 'Failed to load videos. Please try again later.';
-  } finally {
+    videos.value = data as Video[];
+    loading.value = false;
+  } catch (error) {
+    err.value = error as string;
     loading.value = false;
   }
 });
 </script>
+
+<style scoped>
+.video-responsive {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>

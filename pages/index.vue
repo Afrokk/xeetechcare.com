@@ -25,7 +25,7 @@
       </section>
       <div
         class="absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer transition-all hover:scale-110 z-30"
-        @click="($refs.statisticsSection as HTMLElement)?.scrollIntoView({ behavior: 'smooth' })"
+        @click="($refs.youtubeSection as HTMLElement)?.scrollIntoView({ behavior: 'smooth' })"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -46,9 +46,23 @@
     <div
       class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-gray to-transparent z-20"
     ></div>
-    <section id="youtubeSection">
-      <LatestYoutubeVideos />
-    </section>
+    <div class="flex justify-center bg-gray">
+      <section
+        id="youtubeSection"
+        class="z-20 py-6 max-w-screen-xl mx-auto flex flex-wrap justify-center items-center"
+      >
+        <div class="container px-4 md:px-6 flex justify-center flex-col">
+          <div class="space-y-2" id="animated-text">
+            <h2
+              class="text-4xl pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-6xl xl:text-7xl/none"
+            >
+              Latest on <span class="gradient-text">YouTube</span>
+            </h2>
+            <LatestYoutubeVideos />
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 
