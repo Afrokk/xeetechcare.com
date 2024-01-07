@@ -61,6 +61,12 @@ onMounted(async () => {
     loading.value = false;
   }
 });
+
+defineExpose({
+  videos,
+  err,
+  loading,
+});
 </script>
 
 <style scoped>
