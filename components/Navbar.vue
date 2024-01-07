@@ -8,7 +8,7 @@
         }"
         class="mx-auto p-4 fixed top-0 w-full transition-all duration-500"
       >
-        <div class="max-w-screen-lg mx-auto flex justify-between items-center">
+        <div class="max-w-screen-xl mx-auto flex justify-between items-center">
           <div class="z-20">
             <NuxtLink
               to="/"
