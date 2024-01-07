@@ -56,8 +56,15 @@
             <h2
               class="text-4xl pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-6xl xl:text-7xl/none"
             >
-              Latest on <span class="gradient-text">YouTube</span>
+              Latest on <span class="gradient-text">YouTube </span>
+              <FontAwesomeIcon :icon="faYoutube" class="text-zinc-100 h-12 align-middle" />
             </h2>
+            <p
+              class="text-zinc-200 text-center text-1xl font-light tracking-tight sm:text-2xl xl:text-xl/none"
+            >
+              Your dose of quick, digestible tech videos - watched by over
+              <span class="font-bold text-orange-500">1.7 Million</span> followers worldwide.
+            </p>
             <LatestYoutubeVideos />
           </div>
         </div>
@@ -68,6 +75,8 @@
 
 <script setup lang="ts">
 import { Vanta, VantaEffect } from '@/types/vanta';
+import { faYoutube, faInstagram, faTwitter, faTiktok } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { gsap } from 'gsap';
 
 useHead({
