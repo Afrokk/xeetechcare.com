@@ -1,5 +1,5 @@
 <template>
-  <section class="p-8 bg-gray text-white w-full max-w-screen-xl mx-auto">
+  <div class="p-8 bg-gray text-white w-full max-w-screen-xl mx-auto">
     <div v-if="loading" class="flex justify-center items-center w-full">
       <div
         class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-orange-500"
@@ -37,7 +37,7 @@
         </a>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -49,7 +49,7 @@ const loading = ref(true);
 
 onMounted(async () => {
   try {
-    const response = await fetch('/api/videos');
+    const response = await fetch('/api/getVideos');
     if (!response.ok) {
       throw new Error('Failed to fetch videos');
     }
