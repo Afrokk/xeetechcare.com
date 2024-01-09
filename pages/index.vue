@@ -46,7 +46,7 @@
     <div
       class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-gray to-transparent z-20"
     ></div>
-    <div class="flex justify-center bg-gray">
+    <div class="flex justify-center bg-gray" ref="youtubeSection">
       <section
         id="youtubeSection"
         class="z-20 py-6 max-w-screen-xl mx-auto flex flex-wrap justify-center items-center"
@@ -60,13 +60,57 @@
               <FontAwesomeIcon :icon="faYoutube" class="text-zinc-100 h-12 align-middle" />
             </h2>
             <p
-              class="text-zinc-200 text-center text-1xl font-light tracking-tight sm:text-2xl xl:text-xl/none"
+              class="text-zinc-200 text-center text-md font-light tracking-tight sm:text-lg xl:text-xl/none"
             >
               Your dose of quick, digestible tech videos - watched by over
               <span class="font-bold text-orange-500">1.7 Million</span> followers worldwide.
             </p>
             <LatestYoutubeVideos />
           </div>
+        </div>
+      </section>
+    </div>
+    <div class="flex justify-center bg-gray">
+      <section
+        id="socialsSection"
+        class="z-20 pb-6 max-w-screen-xl mx-auto flex flex-wrap justify-center items-center"
+      >
+        <div class="container px-4 md:px-6 flex flex-col md:flex-row justify-center">
+          <div class="w-full p-4 text-zinc-100">
+            <div class="space-y-2" id="animated-text">
+              <h2
+                class="text-4xl pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+              >
+                Popular on <span class="gradient-text">Instagram </span>
+                <FontAwesomeIcon :icon="faInstagram" class="text-zinc-100 h-12 align-middle" />
+              </h2>
+              <p
+                class="text-zinc-200 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
+              >
+                All about tech, travel and lifestyle on Instagram - followed by over
+                <span class="font-bold text-orange-500">115,000</span> people.
+              </p>
+              <PopularOnInstagram />
+            </div>
+          </div>
+          <!-- TO DO -->
+          <!-- <div class="w-full md:w-2/4 p-4 text-zinc-100 text-6xl">
+            <div class="space-y-2" id="animated-text">
+              <h2
+                class="text-4xl pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+              >
+                Latest from <span class="gradient-text">Twitter </span>
+                <FontAwesomeIcon :icon="faTwitter" class="text-zinc-100 h-12 align-middle" />
+              </h2>
+              <p
+                class="text-zinc-200 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
+              >
+                Your dose of quick, digestible tech videos - watched by over
+                <span class="font-bold text-orange-500">1.7 Million</span>
+                followers worldwide.
+              </p>
+            </div>
+          </div> -->
         </div>
       </section>
     </div>
