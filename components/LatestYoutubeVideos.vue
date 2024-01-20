@@ -51,7 +51,7 @@ onMounted(async () => {
   try {
     const response = await fetch('/api/getVideos');
     if (!response.ok) {
-      throw new Error('Failed to fetch videos');
+      throw new Error(`${response.status} - Failed to fetch videos`);
     }
     const data = await response.json();
     videos.value = data as Video[];
