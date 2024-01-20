@@ -27,7 +27,7 @@ async function fetchVideos(): Promise<Video[]> {
   const response: Response = await fetch(`${YOUTUBE_API_URL}?${params}`);
 
   if (!response.ok) {
-    throw new Error(`Error fetching videos: ${response.status}`);
+    throw new Error(`${response.status}`);
   }
 
   const data: { items: Video[] } = await response.json();
