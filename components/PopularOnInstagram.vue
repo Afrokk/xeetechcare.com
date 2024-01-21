@@ -14,7 +14,12 @@
       v-else
       class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 w-full justify-center"
     >
-      <div v-for="(post, index) in posts" :key="index" class="w-full md:w-1/2 mx-auto">
+      <div
+        v-for="(post, index) in posts"
+        :key="index"
+        :class="{ 'pb-8 sm:pb-0': index === 0 }"
+        class="w-full md:w-1/2 mx-auto"
+      >
         <div class="video-responsive flex justify-center rounded-md" v-html="post.frame"></div>
         <div class="mt-4 text-sm sm:text-base md:text-sm">
           <div class="text-zinc-200 rounded-md flex items-center">
