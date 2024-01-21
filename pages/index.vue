@@ -57,7 +57,7 @@
               class="text-4xl pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-6xl xl:text-7xl/none"
             >
               Latest on <span class="gradient-text">YouTube </span>
-              <FontAwesomeIcon :icon="faYoutube" class="text-zinc-100 h-12 align-middle" />
+              <FontAwesomeIcon :icon="faYoutube" class="text-zinc-100 h-9 sm:h-12 align-middle" />
             </h2>
             <p
               class="text-zinc-200 text-center text-md font-light tracking-tight sm:text-lg xl:text-xl/none"
@@ -82,7 +82,10 @@
                 class="text-4xl pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
               >
                 Popular on <span class="gradient-text">Instagram </span>
-                <FontAwesomeIcon :icon="faInstagram" class="text-zinc-100 h-12 align-middle" />
+                <FontAwesomeIcon
+                  :icon="faInstagram"
+                  class="text-zinc-100 h-9 sm:h-12 align-middle"
+                />
               </h2>
               <p
                 class="text-zinc-200 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
@@ -93,24 +96,44 @@
               <PopularOnInstagram />
             </div>
           </div>
-          <!-- TO DO -->
-          <!-- <div class="w-full md:w-2/4 p-4 text-zinc-100 text-6xl">
+        </div>
+        <div class="container px-4 md:px-6 flex flex-col md:flex-row justify-center text-center">
+          <div class="md:w-2/4 p-0 sm:p-4 text-zinc-100">
             <div class="space-y-2" id="animated-text">
               <h2
                 class="text-4xl pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
               >
-                Latest from <span class="gradient-text">Twitter </span>
-                <FontAwesomeIcon :icon="faTwitter" class="text-zinc-100 h-12 align-middle" />
+                Latest on <span class="gradient-text">Twitter </span>
+                <FontAwesomeIcon :icon="faTwitter" class="text-zinc-100 h-9 sm:h-12 align-bottom" />
+              </h2>
+              <p
+                class="text-zinc-200 pb-4 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
+              >
+                Tech insights and updates and a community of over
+                <span class="font-bold text-orange-500">71,000</span> followers.
+              </p>
+              <TwitterFeed />
+            </div>
+          </div>
+          <div class="md:w-2/4 p-0 sm:p-4 mt-10 sm:mt-0 text-zinc-100">
+            <div class="space-y-2" id="animated-text">
+              <h2
+                class="text-4xl pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+              >
+                Latest on <span class="gradient-text">Tiktok </span>
+                <FontAwesomeIcon :icon="faTiktok" class="text-zinc-100 h-9 sm:h-12 align-center" />
               </h2>
               <p
                 class="text-zinc-200 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
               >
-                Your dose of quick, digestible tech videos - watched by over
-                <span class="font-bold text-orange-500">1.7 Million</span>
-                followers worldwide.
+                Join
+                <span class="font-bold text-orange-500">12,000</span>+ fans for short and sweet tech
+                trends and insights.
               </p>
+              <!-- TO DO -->
+              <h3 class="italic">&lt; TikTok Feed/></h3>
             </div>
-          </div> -->
+          </div>
         </div>
       </section>
     </div>

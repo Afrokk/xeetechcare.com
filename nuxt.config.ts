@@ -27,6 +27,10 @@ export default defineNuxtConfig({
           src: 'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js',
           crossorigin: 'anonymous',
         },
+        {
+          src: 'https://platform.twitter.com/widgets.js',
+          async: true,
+        },
       ],
     },
   },
