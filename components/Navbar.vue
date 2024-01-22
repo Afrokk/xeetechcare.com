@@ -35,7 +35,7 @@
           </div>
 
           <NuxtLink
-            to="/contact"
+            to="mailto:xeetechcare@delkatalents.com"
             class="bg-orange-500 uppercase tracking-wide hover:text-white transition-all text-black px-4 py-2 rounded-full hidden md:inline md:ml-4"
             :class="[{ 'hover:bg-gray': isScrolled }, { 'font-bold': isRouteActive('/contact') }]"
             exact
@@ -86,7 +86,12 @@
             :class="{ 'translate-x-full': !mobileMenuOpen }"
           >
             <div class="flex flex-col justify-center h-full p-4 text-center text-black">
-              <NuxtLink to="/" class="block py-2" :class="{ 'font-bold': isRouteActive('/') }" exact
+              <NuxtLink
+                to="/"
+                class="block py-2"
+                :class="{ 'font-bold': isRouteActive('/') }"
+                @click.native="toggleMobileMenu"
+                exact
                 >Home</NuxtLink
               >
               <hr class="border-t border-gray border-opacity-20 my-2" />
@@ -94,6 +99,7 @@
                 to="/work"
                 class="block py-2"
                 :class="{ 'font-bold': isRouteActive('/work') }"
+                @click.native="toggleMobileMenu"
                 exact
                 >Work with Us</NuxtLink
               >
@@ -102,14 +108,16 @@
                 to="/team"
                 class="block py-2"
                 :class="{ 'font-bold': isRouteActive('/team') }"
+                @click.native="toggleMobileMenu"
                 exact
                 >Team</NuxtLink
               >
               <hr class="border-t border-gray border-opacity-20 my-2" />
               <NuxtLink
-                to="/contact"
+                to="mailto:xeetechcare@delkatalents.com"
                 class="bg-orange-500 hover:bg-black hover:text-white transition-all text-black px-4 py-2 rounded-full mx-auto w-fit sm:w-1/4 mt-2"
                 :class="{ 'font-bold text-white': isRouteActive('/contact') }"
+                @click.native="toggleMobileMenu"
                 exact
                 >Contact</NuxtLink
               >
