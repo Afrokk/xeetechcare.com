@@ -30,10 +30,6 @@ export default defineNuxtConfig({
         {
           src: 'https://platform.twitter.com/widgets.js',
           async: true,
-        },
-        {
-          src: 'https://www.tiktok.com/embed.js',
-          async: true,
         }
       ],
     },
