@@ -65,7 +65,7 @@
               Your dose of quick, digestible tech videos - watched by over
               <span class="font-bold text-orange-500">1.7 Million</span> followers worldwide.
             </p>
-            <LatestYoutubeVideos />
+            <YoutubeFeed />
           </div>
         </div>
       </section>
