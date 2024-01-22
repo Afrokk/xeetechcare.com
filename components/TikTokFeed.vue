@@ -1,7 +1,7 @@
 <template>
   <div class="custom-scrollbar overflow-auto h-[500px] sm:h-[600px] md:h-[700px] p-4">
-    <div v-for="(video, index) in videoData" :key="index" class="mb-4">
-      <a :href="videos[index]" target="_blank">
+    <div v-for="(video, index) in reelData" :key="index" class="mb-4">
+      <a :href="reel[index]" target="_blank">
         <img
           :src="video.thumbnail_url"
           :alt="video.title"
@@ -13,20 +13,28 @@
   </div>
 </template>
 
-<script setup>
-const videos = ref([
+<script setup lang="ts">
+import { Reel } from '@/types/reel';
+
+const reel = ref<string[]>([
   'https://www.tiktok.com/@xeetechcare0/video/7267641357299141906',
   'https://www.tiktok.com/@xeetechcare0/video/7283499104011848968',
   'https://www.tiktok.com/@xeetechcare0/video/7131796812633001217',
 ]);
 
-const videoData = ref([]);
+const reelData = ref<Reel[]>([]);
+const fetchError = ref<string | null>(null);
 
 onMounted(async () => {
-  for (let url of videos.value) {
-    const response = await fetch(`https://www.tiktok.com/oembed?url=${url}`);
-    const data = await response.json();
-    videoData.value.push(data);
+  try {
+    const fetchPromises = reel.value.map((url) =>
+      fetch(`https://www.tiktok.com/oembed?url=${url}`).then((response) => response.json()),
+    );
+
+    reelData.value = await Promise.all(fetchPromises);
+  } catch (error) {
+    fetchError.value = 'Failed to fetch video data';
+    console.error(fetchError.value, error);
   }
 });
 </script>
@@ -49,6 +57,6 @@ onMounted(async () => {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #E4E4E7;
+  background: #e4e4e7;
 }
 </style>
