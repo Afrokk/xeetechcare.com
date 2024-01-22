@@ -109,8 +109,8 @@
               <p
                 class="text-zinc-200 pb-4 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
               >
-                Tech insights and updates and a community of over
-                <span class="font-bold text-orange-500">71,000</span> followers.
+                Join community of over
+                <span class="font-bold text-orange-500">71,000</span> techies.
               </p>
               <TwitterFeed />
             </div>
@@ -127,11 +127,60 @@
                 class="text-zinc-200 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
               >
                 Join
-                <span class="font-bold text-orange-500">12,000</span>+ fans for short and sweet tech
-                trends and insights.
+                <span class="font-bold text-orange-500">12,000</span>+ fans for short and sweet
+                TechToks.
               </p>
               <!-- TO DO -->
               <h3 class="italic">&lt; TikTok Feed/></h3>
+              <blockquote
+                class="tiktok-embed"
+                cite="https://www.tiktok.com/@xeetechcare0/video/7267641357299141906"
+                data-video-id="7267641357299141906"
+                data-embed-from="embed_page"
+                style="max-width: 605px; min-width: 325px"
+              >
+                <section>
+                  <a
+                    target="_blank"
+                    title="@xeetechcare0"
+                    href="https://www.tiktok.com/@xeetechcare0?refer=embed"
+                    >@xeetechcare0</a
+                  >
+                  <p>
+                    Samsung One UI 6.0 Android 14 - BEST FEATURES I LOVE.
+                    <a
+                      title="samsung"
+                      target="_blank"
+                      href="https://www.tiktok.com/tag/samsung?refer=embed"
+                      >#Samsung</a
+                    >
+                    <a
+                      title="galaxys23ultra"
+                      target="_blank"
+                      href="https://www.tiktok.com/tag/galaxys23ultra?refer=embed"
+                      >#galaxys23ultra</a
+                    >
+                    <a
+                      title="tech"
+                      target="_blank"
+                      href="https://www.tiktok.com/tag/tech?refer=embed"
+                      >#tech</a
+                    >
+                    <a
+                      title="techtok"
+                      target="_blank"
+                      href="https://www.tiktok.com/tag/techtok?refer=embed"
+                      >#techtok</a
+                    >
+                  </p>
+                  <a
+                    target="_blank"
+                    title="♬ original sound - XEETECHCARE"
+                    href="https://www.tiktok.com/music/original-sound-7267641456473557761?refer=embed"
+                    >♬ original sound - XEETECHCARE</a
+                  >
+                </section>
+              </blockquote>
             </div>
           </div>
         </div>
