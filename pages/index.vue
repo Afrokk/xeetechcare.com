@@ -109,7 +109,7 @@
               <p
                 class="text-zinc-200 pb-4 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
               >
-                Join community of over
+                A community of over
                 <span class="font-bold text-orange-500">71,000</span> techies.
               </p>
               <TwitterFeed />
