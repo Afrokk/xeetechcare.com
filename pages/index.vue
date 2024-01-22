@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen w-screen">
+  <div class="flex flex-col justify-center align-center">
     <div id="render-dots" class="absolute inset-0 z-10"></div>
 
     <div
@@ -120,67 +120,16 @@
               <h2
                 class="text-4xl pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
               >
-                Latest on <span class="gradient-text">Tiktok </span>
+                New on <span class="gradient-text">Tiktok </span>
                 <FontAwesomeIcon :icon="faTiktok" class="text-zinc-100 h-9 sm:h-12 align-center" />
               </h2>
               <p
-                class="text-zinc-200 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
+                class="text-zinc-200 pb-4 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
               >
                 Join
-                <span class="font-bold text-orange-500">12,000</span>+ fans for short and sweet
-                TechToks.
+                <span class="font-bold text-orange-500">12,000</span>+ fans for some TechToks.
               </p>
-              <!-- TO DO -->
-              <h3 class="italic">&lt; TikTok Feed/></h3>
-              <blockquote
-                class="tiktok-embed"
-                cite="https://www.tiktok.com/@xeetechcare0/video/7267641357299141906"
-                data-video-id="7267641357299141906"
-                data-embed-from="embed_page"
-                style="max-width: 605px; min-width: 325px"
-              >
-                <section>
-                  <a
-                    target="_blank"
-                    title="@xeetechcare0"
-                    href="https://www.tiktok.com/@xeetechcare0?refer=embed"
-                    >@xeetechcare0</a
-                  >
-                  <p>
-                    Samsung One UI 6.0 Android 14 - BEST FEATURES I LOVE.
-                    <a
-                      title="samsung"
-                      target="_blank"
-                      href="https://www.tiktok.com/tag/samsung?refer=embed"
-                      >#Samsung</a
-                    >
-                    <a
-                      title="galaxys23ultra"
-                      target="_blank"
-                      href="https://www.tiktok.com/tag/galaxys23ultra?refer=embed"
-                      >#galaxys23ultra</a
-                    >
-                    <a
-                      title="tech"
-                      target="_blank"
-                      href="https://www.tiktok.com/tag/tech?refer=embed"
-                      >#tech</a
-                    >
-                    <a
-                      title="techtok"
-                      target="_blank"
-                      href="https://www.tiktok.com/tag/techtok?refer=embed"
-                      >#techtok</a
-                    >
-                  </p>
-                  <a
-                    target="_blank"
-                    title="♬ original sound - XEETECHCARE"
-                    href="https://www.tiktok.com/music/original-sound-7267641456473557761?refer=embed"
-                    >♬ original sound - XEETECHCARE</a
-                  >
-                </section>
-              </blockquote>
+              <TikTokFeed />
             </div>
           </div>
         </div>
