@@ -144,7 +144,7 @@ const isRouteActive = (routePath: string) => {
 };
 
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > 250;
+  isScrolled.value = window.scrollY > 150;
 };
 
 onMounted(() => {
