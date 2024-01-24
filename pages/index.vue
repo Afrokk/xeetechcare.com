@@ -9,12 +9,12 @@
         <div class="space-y-2">
           <h1
             id="animated-text"
-            class="text-4xl text-center font-bold tracking-tighter sm:text-6xl xl:text-8xl/none"
+            class="text-2xl xsm:text-5xl text-center font-bold tracking-tighter sm:text-6xl xl:text-8xl/none"
           >
             <span class="gradient-text">XEETECHCARE</span>
           </h1>
           <p
-            class="max-w-[700px] text-center text-sm sm:text-base md:text-lg lg:text-xl dark:text-zinc-200 mx-auto"
+            class="text-center hidden xsm:block sm:text-base md:text-lg lg:text-xl dark:text-zinc-200 mx-auto"
           >
             Your one-stop for tech news, reviews, and everything in between
           </p>
