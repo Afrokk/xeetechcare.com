@@ -23,25 +23,10 @@
           </div>
         </div>
       </section>
-      <div
-        class="absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer transition-all hover:scale-110 z-30"
+      <DownArrow
+        :class="'text-zinc-300'"
         @click="($refs.youtubeSection as HTMLElement)?.scrollIntoView({ behavior: 'smooth' })"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          class="h-6 w-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          ></path>
-        </svg>
-      </div>
+      />
     </div>
     <div
       class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-gray to-transparent z-20"
@@ -49,7 +34,7 @@
     <div class="flex justify-center bg-gray" ref="youtubeSection">
       <section
         id="youtubeSection"
-        class="z-20 py-6 max-w-screen-xl mx-auto flex flex-wrap justify-center items-center"
+        class="z-20 pt-6 max-w-screen-xl mx-auto flex flex-wrap justify-center items-center"
       >
         <div class="container px-4 md:px-6 flex justify-center flex-col">
           <div class="space-y-2" id="animated-text">
@@ -77,6 +62,7 @@
       >
         <div class="container px-4 md:px-6 flex flex-col md:flex-row justify-center">
           <div class="w-full p-4 text-zinc-100">
+            <Separator />
             <div class="space-y-2" id="animated-text">
               <h2
                 class="text-4xl pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
@@ -97,6 +83,7 @@
             </div>
           </div>
         </div>
+        <Separator />
         <div class="container px-4 md:px-6 flex flex-col md:flex-row justify-center text-center">
           <div class="md:w-2/4 p-0 sm:p-4 text-zinc-100">
             <div class="space-y-2" id="animated-text">
@@ -207,21 +194,6 @@ onBeforeUnmount(() => {
     transform: translateY(0);
   }
 }
-
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-.animate-bounce {
-  animation: bounce 1.6s infinite;
-}
-
 .hero-main {
   animation: fadeInUp 0.5s ease-in-out;
 }
