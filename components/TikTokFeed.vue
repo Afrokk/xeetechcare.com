@@ -39,7 +39,7 @@ onMounted(async () => {
 });
 </script>
 
-<style>
+<style scoped>
 .h-600px {
   height: 700px;
 }

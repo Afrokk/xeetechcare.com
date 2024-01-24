@@ -15,24 +15,27 @@
 
 <script setup lang="ts">
 onMounted(() => {
-  (window as Window).twttr?.widgets
-    ?.createTimeline(
-      {
-        sourceType: 'profile',
-        screenName: 'XEETECHCARE',
-      },
-      document.getElementById('twitter-embed'),
-      {
-        chrome: 'noheader nofooter',
-        theme: 'dark',
-      },
-    )
-    .then(() => {
-      const loadingElement = document.getElementById('loading');
-      if (loadingElement) {
-        loadingElement.style.display = 'none';
-      }
-    });
+  const twttr = (window as Window).twttr;
+  twttr?.ready(() => {
+    twttr.widgets
+      .createTimeline(
+        {
+          sourceType: 'profile',
+          screenName: 'XEETECHCARE',
+        },
+        document.getElementById('twitter-embed'),
+        {
+          chrome: 'noheader nofooter',
+          theme: 'dark',
+        },
+      )
+      .then(() => {
+        const loadingElement = document.getElementById('loading');
+        if (loadingElement) {
+          loadingElement.style.display = 'none';
+        }
+      });
+  });
 });
 </script>
 
