@@ -1,49 +1,50 @@
 <template>
-  <div class="min-h-screen w-full bg-grey flex flex-col items-start justify-center pt-20">
+  <div class="bg-grey flex flex-col items-start justify-center pt-20">
     <section
       id="statisticsSection"
       ref="statisticsSection"
       class="z-20 pb-16 max-w-screen-xl mx-auto flex flex-wrap justify-center items-center"
     >
-      <div class="container px-4 md:px-6 flex justify-center flex-col">
-        <div class="space-y-2" id="animated-text">
+      <div class="container px-4">
+        <div class="space-y-2 flex flex-col" id="animated-text">
           <h2
-            class="text-4xl mt-16 pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-6xl xl:text-7xl/none"
+            class="text-3xl xsm:text-6xl mt-16 pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-6xl xl:text-7xl/none"
           >
             <span class="gradient-text">Work</span> With Us.
           </h2>
-          <p class="text-zinc-100 font-normal pb-8 md:mx-20">
-            We've worked with brands of all scales. Lorem ipsum dolor sit amet consectetur,
-            adipisicing elit. Sunt minima ex praesentium sit velit ratione esse placeat, adipisci
-            nisi veritatis vitae voluptatum iure magnam rerum assumenda, deleniti facere ea labore!
-          </p>
+          <p
+            class="text-zinc-100 flex flex-col text-sm xsm:text-base md:text-base pb-8 md:mx-20"
+            v-html="content ? content.mainDescription : ''"
+          ></p>
         </div>
         <div class="grid gap-6 items-center">
           <div class="flex flex-col justify-center space-y-8 text-center">
             <div class="space-y-2" id="animated-text">
               <h2
-                class="text-3xl pb-8 text-zinc-200 text-center font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                class="text-3xl xsm:text-6xl pb-0 pt-5 text-zinc-200 text-center font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
               >
                 The <span class="gradient-text">Numbers</span>
               </h2>
             </div>
-            <div class="w-full max-w-full space-y-4 mx-auto text-white">
-              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 items-center">
-                <div class="grid-item flex flex-col items-center space-y-2 p-4">
+            <div class="w-full max-w-full mx-auto">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-center">
+                <div
+                  class="grid-item flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg"
+                >
                   <div className="p-2 rounded-full">
                     <font-awesome-icon
                       :icon="faYoutube"
-                      class="h-8 w-8 sm:h-12 text-red-600 sm:w-12"
+                      class="w-28 h-28 xsm:h-24 xsm:w-24 md:w-16 md:h-16 text-red-600"
                     />
-                    <h5 class="font-bold text-zinc-200">YouTube</h5>
+                    <h5 class="font-bold text-zinc-200 text-lg xsm:text-xl md:text-lg">YouTube</h5>
                   </div>
                   <div
-                    class="flex items-center text-2xl text-center font-bold tracking-tighter sm:text-4xl xl:text-6xl/none text-orange-500"
+                    class="flex items-center text-2xl xsm:text-6xl text-center font-bold tracking-tighter xl:text-6xl/none text-orange-500"
                   >
                     <CountUp :endVal="statCurrentVals[0]" />
                     <span class="ml-1 text-zinc-200">+</span>
                   </div>
-                  <p class="text-zinc-200">Total Subscribers</p>
+                  <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg">Total Subscribers</p>
                 </div>
                 <div
                   class="grid-item flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg"
@@ -51,17 +52,19 @@
                   <div className="p-2 rounded-full">
                     <font-awesome-icon
                       :icon="faInstagram"
-                      class="h-8 w-8 sm:h-12 text-purple-600 sm:w-12"
+                      class="w-28 h-28 xsm:h-24 xsm:w-24 md:w-16 md:h-16 text-purple-600"
                     />
-                    <h5 class="font-bold text-zinc-200">Instagram</h5>
+                    <h5 class="font-bold text-zinc-200 text-lg xsm:text-xl md:text-lg">
+                      Instagram
+                    </h5>
                   </div>
                   <div
-                    class="flex items-center text-2xl text-center font-bold tracking-tighter sm:text-4xl xl:text-6xl/none text-orange-500"
+                    class="flex items-center text-2xl xsm:text-6xl text-center font-bold tracking-tighter xl:text-6xl/none text-orange-500"
                   >
                     <CountUp :endVal="statCurrentVals[1]" />
                     <span class="ml-1 text-zinc-200">+</span>
                   </div>
-                  <p class="text-zinc-200">Total Followers</p>
+                  <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg">Total Followers</p>
                 </div>
                 <div
                   class="grid-item flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg"
@@ -69,17 +72,17 @@
                   <div className="p-2 rounded-full">
                     <font-awesome-icon
                       :icon="faTwitter"
-                      class="h-8 w-8 sm:h-12 text-blue-500 sm:w-12"
+                      class="w-28 h-28 xsm:h-24 xsm:w-24 md:w-16 md:h-16 text-blue-500"
                     />
-                    <h5 class="font-bold text-zinc-200">Twitter</h5>
+                    <h5 class="font-bold text-zinc-200 text-lg xsm:text-xl md:text-lg">Twitter</h5>
                   </div>
                   <div
-                    class="flex items-center text-2xl text-center font-bold tracking-tighter sm:text-4xl xl:text-6xl/none text-orange-500"
+                    class="flex items-center text-2xl xsm:text-6xl text-center font-bold tracking-tighter xl:text-6xl/none text-orange-500"
                   >
                     <CountUp :endVal="statCurrentVals[2]" />
                     <span class="ml-1 text-zinc-200">+</span>
                   </div>
-                  <p class="text-zinc-200">Total Followers</p>
+                  <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg">Total Followers</p>
                 </div>
                 <div
                   class="grid-item flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg"
@@ -87,18 +90,18 @@
                   <div className="p-2 rounded-full">
                     <font-awesome-icon
                       :icon="faYoutube"
-                      class="h-8 w-8 sm:h-12 text-red-600 sm:w-12"
+                      class="w-28 h-28 xsm:h-24 xsm:w-24 md:w-16 md:h-16 text-red-600"
                     />
-                    <h5 class="font-bold text-zinc-200">YouTube</h5>
+                    <h5 class="font-bold text-zinc-200 text-lg xsm:text-xl md:text-lg">YouTube</h5>
                   </div>
                   <div
-                    class="flex items-center text-2xl text-center font-bold tracking-tighter sm:text-4xl xl:text-6xl/none text-orange-500"
+                    class="flex items-center text-2xl xsm:text-6xl text-center font-bold tracking-tighter xl:text-6xl/none text-orange-500"
                   >
                     <CountUp :endVal="statCurrentVals[3]" />
                     <span class="ml-2">Million</span>
                     <span class="ml-1 text-zinc-200">+</span>
                   </div>
-                  <p class="text-zinc-200">Total Views</p>
+                  <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg">Total Views</p>
                 </div>
                 <div
                   class="grid-item flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg"
@@ -106,17 +109,19 @@
                   <div className="p-2 rounded-full">
                     <font-awesome-icon
                       :icon="faInstagram"
-                      class="h-8 w-8 sm:h-12 text-purple-600 sm:w-12"
+                      class="w-28 h-28 xsm:h-24 xsm:w-24 md:w-16 md:h-16 text-purple-600"
                     />
-                    <h5 class="font-bold text-zinc-200">Instagram</h5>
+                    <h5 class="font-bold text-zinc-200 text-lg xsm:text-xl md:text-lg">
+                      Instagram
+                    </h5>
                   </div>
                   <div
-                    class="flex items-center text-2xl text-center font-bold tracking-tighter sm:text-4xl xl:text-6xl/none text-orange-500"
+                    class="flex items-center text-2xl xsm:text-6xl text-center font-bold tracking-tighter xl:text-6xl/none text-orange-500"
                   >
                     <CountUp :endVal="statCurrentVals[4]" />
                     <span class="ml-1 text-zinc-200">+</span>
                   </div>
-                  <p class="text-zinc-200">Video Views</p>
+                  <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg">Video Views</p>
                 </div>
                 <div
                   class="grid-item flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg"
@@ -124,45 +129,49 @@
                   <div className="p-2 rounded-full">
                     <font-awesome-icon
                       :icon="faTiktok"
-                      class="h-8 w-8 sm:h-12 text-pink-600 sm:w-12"
+                      class="w-28 h-28 xsm:h-24 xsm:w-24 md:w-16 md:h-16 text-pink-600"
                     />
-                    <h2 class="font-bold text-zinc-200">TikTok</h2>
+                    <h2 class="font-bold text-zinc-200 text-lg xsm:text-xl md:text-lg">TikTok</h2>
                   </div>
                   <div
-                    class="flex items-center text-2xl text-center font-bold tracking-tighter sm:text-4xl xl:text-6xl/none text-orange-500"
+                    class="flex items-center text-2xl xsm:text-6xl text-center font-bold tracking-tighter xl:text-6xl/none text-orange-500"
                   >
                     <CountUp :endVal="statCurrentVals[5]" />
                     <span class="ml-1 text-zinc-200">+</span>
                   </div>
-                  <p class="text-zinc-200">Total Likes</p>
+                  <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg">Total Likes</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div id="brandsSection" class="carousel-container bg-gray pt-16">
-          <h2
-            class="text-3xl pb-8 text-zinc-200 text-center font-bold tracking-tighter sm:text-3xl xl:text-4xl/none"
-          >
-            Brands we've collaborted with
-          </h2>
-          <div class="carousel pt-4">
-            <img
-              v-for="logo in logos"
-              :key="logo"
-              :src="logo"
-              class="carousel-item px-5 border-r border-r-zinc-800 border-opacity-20"
-            />
-            <img
-              v-for="logo in logos"
-              :key="logo + 'clone'"
-              :src="logo"
-              class="carousel-item px-5 border-r border-r-zinc-800 border-opacity-20"
-            />
-          </div>
-        </div>
       </div>
     </section>
+    <div id="brandsSection" class="carousel-container bg-gray pt-16 overflow-x-hidden">
+      <h2
+        class="text-3xl pb-8 text-zinc-200 text-center font-bold tracking-tighter sm:text-4xl xl:text-5xl"
+      >
+        Brands we've collaborted with
+      </h2>
+      <div class="carousel pt-4 flex">
+        <div
+          class="flex space-x-4 sm:space-x-8 md:space-x-12 lg:space-x-16 xl:space-x-20 2xl:space-x-24"
+        >
+          <img
+            v-for="logo in logos"
+            :key="logo"
+            :src="logo"
+            class="carousel-item flex-shrink-0 w-24 h-24 object-contain sm:w-32 sm:h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96"
+          />
+          <img
+            v-for="logo in logos"
+            :key="logo + 'clone'"
+            :src="logo"
+            class="carousel-item flex-shrink-0 w-24 h-24 object-contain sm:w-32 sm:h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -178,19 +187,25 @@ gsap.registerPlugin(ScrollTrigger);
 let isCountStarted = false;
 let statCurrentVals = ref(Array(6).fill(0));
 
+const { data: content } = await useAsyncData('work', () => queryContent('/work').findOne());
+
+defineExpose({
+  data: content,
+});
+
 const statEndVals = [1710000, 115000, 72000, 750, 65000, 630000];
 const logos = [
-  '/assets/img/anker.svg',
-  '/assets/img/oneplus.svg',
-  '/assets/img/oppo.svg',
-  '/assets/img/grammarly.svg',
-  '/assets/img/samsung.svg',
-  '/assets/img/mediatek.svg',
-  '/assets/img/honor.svg',
-  '/assets/img/squarespace.svg',
-  '/assets/img/nordvpn.svg',
-  '/assets/img/huawei.svg',
-  '/assets/img/xiaomi.svg',
+  '/assets/img/brands/anker.svg',
+  '/assets/img/brands/oneplus.svg',
+  '/assets/img/brands/oppo.svg',
+  '/assets/img/brands/grammarly.svg',
+  '/assets/img/brands/samsung.svg',
+  '/assets/img/brands/mediatek.svg',
+  '/assets/img/brands/honor.svg',
+  '/assets/img/brands/squarespace.svg',
+  '/assets/img/brands/nordvpn.svg',
+  '/assets/img/brands/huawei.svg',
+  '/assets/img/brands/xiaomi.svg',
 ];
 
 defineComponent({

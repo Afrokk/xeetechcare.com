@@ -17,6 +17,9 @@ export default {
       colors: {
         gray: '#111215',
       },
+      screens: {
+        xsm: '384px',
+      },
       maxWidth: {
         xl: '1140px',
       },
