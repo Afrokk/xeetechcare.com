@@ -1,8 +1,12 @@
 # Content for Work page.
-# Supports HTML rendering.
+# HTML elements.
 
 # Main Description:
 mainDescription: |
-  Our journey has been a blast, working with a whole spectrum of cool brands, from up-and-coming 
-  startups to big industry names. We love mixing it up with the latest tech scoops, honest 
-  reviews, and head-to-head comparisons that our audience loves.
+  <p>Our journey has been a blast, working with a whole spectrum of cool brands, from up-and-coming 
+  <span>startups</span> to <span>big industry names</span>. We love mixing it up with the latest tech scoops, 
+  honest reviews, and head-to-head comparisons that our audience loves.</p>
+
+callToAction: |
+  Curious about what we've achieved and who we've worked with? Check out our stats, previous collaborations, 
+  and the impact we've made down below.

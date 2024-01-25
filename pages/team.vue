@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-gray max-w-screen-xl mx-auto text-white flex flex-col justify-center items-center h-screen w-screen"
+    class="bg-gray max-w-screen-xl mx-auto text-white flex flex-col justify-center items-center h-screen"
   >
     <h1>Team.</h1>
   </div>

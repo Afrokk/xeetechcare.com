@@ -25,6 +25,7 @@
       </section>
       <DownArrow
         :class="'text-zinc-300'"
+        :positionClass="'absolute bottom-20 left-1/2'"
         @click="($refs.youtubeSection as HTMLElement)?.scrollIntoView({ behavior: 'smooth' })"
       />
     </div>
@@ -84,7 +85,7 @@
           </div>
         </div>
         <Separator />
-        <div class="container px-4 md:px-6 flex flex-col md:flex-row justify-center text-center">
+        <div class="container px-4 md:px-6 flex md:flex-row justify-center text-center">
           <div class="md:w-2/4 p-0 sm:p-4 text-zinc-100">
             <div class="space-y-2" id="animated-text">
               <h2
