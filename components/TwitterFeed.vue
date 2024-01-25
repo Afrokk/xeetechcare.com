@@ -14,29 +14,47 @@
 </template>
 
 <script setup lang="ts">
-onMounted(() => {
-  const twttr = (window as Window).twttr;
-  twttr?.ready(() => {
-    twttr.widgets
-      .createTimeline(
-        {
-          sourceType: 'profile',
-          screenName: 'XEETECHCARE',
-        },
-        document.getElementById('twitter-embed'),
-        {
-          chrome: 'noheader nofooter',
-          theme: 'dark',
-        },
-      )
-      .then(() => {
-        const loadingElement = document.getElementById('loading');
-        if (loadingElement) {
-          loadingElement.style.display = 'none';
-        }
+/**
+ * Initializes and loads the Twitter widget.
+ *
+ * This function checks for the availability of the Twitter widget on the window object.
+ * If available, it clears the interval check and prepares the widget.
+ * It then creates a Twitter timeline for the injects it into the DOM element.
+ * Once the timeline is successfully created, it hides the loader.
+ *
+ * @function loadTwitterWidget
+ */
+
+function loadTwitterWidget() {
+  const checkTwitterWidget = setInterval(() => {
+    const twttr = (window as Window).twttr;
+    if (twttr) {
+      clearInterval(checkTwitterWidget);
+      twttr.ready(() => {
+        twttr.widgets
+          .createTimeline(
+            {
+              sourceType: 'profile',
+              screenName: 'XEETECHCARE',
+            },
+            document.getElementById('twitter-embed'),
+            {
+              chrome: 'noheader nofooter',
+              theme: 'dark',
+            },
+          )
+          .then(() => {
+            const loadingElement = document.getElementById('loading');
+            if (loadingElement) {
+              loadingElement.style.display = 'none';
+            }
+          });
       });
-  });
-});
+    }
+  }, 100);
+}
+
+onMounted(loadTwitterWidget);
 </script>
 
 <style scoped>
