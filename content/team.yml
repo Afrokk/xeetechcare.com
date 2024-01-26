@@ -2,18 +2,18 @@
 # Supports HTML.
 
 team:
-- id: 1
-  name: <span class="font-normal">Zaryab</span> Khan
-  image: /assets/img/a3425311.png
-  socialMediaLinks:
-    insta: https://www.instagram.com/xeetechcare/
-    youtube: https://www.youtube.com/user/xeetechcare
-    email: xeetechcare@delkatalents.com
-    twitter: https://twitter.com/xeetechcare
-    tiktok: https://tiktok.com/xeetechcare0
-- id: 2
-  name: <span class="font-normal">Afrokk</span> Khan
-  image: /assets/img/a2248218.png
-  socialMediaLinks:
-    insta: https://www.instagram.com/afrokk_/
-    email: hi@afrokk.dev
+  - id: 1
+    name: <span class="font-normal">Zaryab</span> Khan
+    image: /assets/img/a3425311.png
+    socialMediaLinks:
+      insta: https://www.instagram.com/xeetechcare/
+      youtube: https://www.youtube.com/user/xeetechcare
+      email: xeetechcare@delkatalents.com
+      twitter: https://twitter.com/xeetechcare
+      tiktok: https://tiktok.com/xeetechcare0
+  - id: 2
+    name: <span class="font-normal">Afrokk</span> Khan
+    image: /assets/img/a2248218.png
+    socialMediaLinks:
+      insta: https://www.instagram.com/afrokk_/
+      email: hi@afrokk.dev
