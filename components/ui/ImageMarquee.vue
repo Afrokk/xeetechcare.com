@@ -7,7 +7,11 @@
     </ul>
     <ul class="marquee_content" aria-hidden="true">
       <li v-for="(logo, index) in paths" :key="index">
-        <img :src="logo as string" alt="Brand logos." class="h-9 sm:h-16 xl:h-16 2xl:h-20 w-auto" />
+        <NuxtImg
+          :src="logo as string"
+          alt="Brand logos."
+          class="h-9 sm:h-16 xl:h-16 2xl:h-20 w-auto"
+        />
       </li>
     </ul>
     <div class="fade-to-bg absolute top-0 bottom-0 left-0 right-0 pointer-events-none"></div>

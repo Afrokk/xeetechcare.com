@@ -14,7 +14,10 @@
         class="card flex flex-col sm:flex-row rounded-lg items-center align-middle max-w-2xl m-3"
       >
         <div class="flex items-center justify-center sm:justify-start px-6 pt-4 w-full sm:w-3/4">
-          <img
+          <NuxtImg 
+            width="500"
+            height="500"
+            format="webp"
             class="aspect-w-1 aspect-h-1 w-full object-cover rounded-full p-0 xsm:p-12 xsm:pb-0 sm:p-0"
             :src="member.image"
             alt="Team member image."
