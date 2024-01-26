@@ -14,10 +14,9 @@
             <span class="gradient-text">XEETECHCARE</span>
           </h1>
           <p
-            class="text-center hidden xsm:block sm:text-base md:text-lg lg:text-xl dark:text-zinc-200 mx-auto"
-          >
-            Your one-stop for tech news, reviews, and everything in between
-          </p>
+            v-html="data.heroSubheading ? data.heroSubheading : ''"
+            class="text-center hidden font-normal xsm:block sm:text-base md:text-lg lg:text-xl dark:text-zinc-300 mx-auto"
+          ></p>
           <div class="pt-3">
             <SocialMediaLinks />
           </div>
@@ -46,11 +45,9 @@
               <FontAwesomeIcon :icon="faYoutube" class="text-zinc-100 h-9 sm:h-12 align-middle" />
             </h2>
             <p
-              class="text-zinc-200 text-center text-md font-light tracking-tight sm:text-lg xl:text-xl/none"
-            >
-              Your dose of quick, digestible tech videos - watched by over
-              <span class="font-bold text-orange-500">1.7 Million</span> followers worldwide.
-            </p>
+              v-html="data.youtubeFeedDescripton ? data.youtubeFeedDescripton : ''"
+              class="text-zinc-200 pb-4 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
+            ></p>
             <YoutubeFeed />
           </div>
         </div>
@@ -75,11 +72,9 @@
                 />
               </h2>
               <p
-                class="text-zinc-200 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
-              >
-                All about tech, travel and lifestyle on Instagram - followed by over
-                <span class="font-bold text-orange-500">115,000</span> people.
-              </p>
+                v-html="data.instaFeedDescripton ? data.instaFeedDescripton : ''"
+                class="text-zinc-200 pb-4 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
+              ></p>
               <PopularOnInstagram />
             </div>
           </div>
@@ -95,11 +90,9 @@
                 <FontAwesomeIcon :icon="faTwitter" class="text-zinc-100 h-9 sm:h-12 align-bottom" />
               </h2>
               <p
+                v-html="data.twitterFeedDescripton ? data.twitterFeedDescripton : ''"
                 class="text-zinc-200 pb-4 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
-              >
-                A community of over
-                <span class="font-bold text-orange-500">71,000</span> techies.
-              </p>
+              ></p>
               <TwitterFeed />
             </div>
           </div>
@@ -112,11 +105,9 @@
                 <FontAwesomeIcon :icon="faTiktok" class="text-zinc-100 h-9 sm:h-12 align-center" />
               </h2>
               <p
+                v-html="data.tiktokFeedDescripton ? data.tiktokFeedDescripton : ''"
                 class="text-zinc-200 pb-4 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
-              >
-                Join
-                <span class="font-bold text-orange-500">12,000</span>+ fans for some TechToks.
-              </p>
+              ></p>
               <TikTokFeed />
             </div>
           </div>
@@ -146,6 +137,8 @@ useHead({
 declare const VANTA: Vanta;
 
 let dotEffect: VantaEffect | null = null;
+
+let data = await fetchData('home');
 
 onMounted(() => {
   dotEffect = VANTA.DOTS({

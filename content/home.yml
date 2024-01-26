@@ -1,0 +1,23 @@
+# Content for Home Page.
+# Supports HTML.
+
+heroSubheading: |
+  Your one-stop for tech news, reviews, and everything in between
+
+youtubeFeedDescripton:
+  Your dose of quick, digestible tech videos - watched by over 
+  <span class="font-bold text-orange-500">1.7 Million</span> 
+  followers worldwide.
+
+instaFeedDescripton: |
+  All about tech, travel and lifestyle on Instagram - 
+  followed by over <span class="font-bold text-orange-500">115,000</span> 
+  people.
+
+twitterFeedDescripton: |
+  A community of over <span class="font-bold text-orange-500">71,000</span> 
+  techies.
+
+tiktokFeedDescripton: |
+  Join <span class="font-bold text-orange-500">12,000+</span> fans for some 
+  TechToks.
