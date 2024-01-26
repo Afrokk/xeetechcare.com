@@ -34,7 +34,7 @@
             >
           </div>
 
-          <ContactButton :scrollStatus="isScrolled" />
+          <ContactButton :scrollStatus="isScrolled" :class="'hidden md:inline'" />
 
           <button
             @click="toggleMobileMenu"

@@ -1,6 +1,6 @@
 <template>
   <section
-    class="bg-gray max-w-screen-xl mx-auto text-zinc-100 flex flex-col justify-center items-center h-screen px-4 sm:px-0"
+    class="bg-gray max-w-screen-xl mx-auto text-zinc-100 flex flex-col justify-center items-center min-h-screen px-4 sm:px-0 pt-36 sm:pt-20"
   >
     <h1
       class="text-5xl sm:text-5xl md:text-6xl xl:text-7xl/none mb-4 sm:mb-8 xsm:text-4xl mt-8 sm:mt-16 pb-4 text-zinc-200 text-center font-bold tracking-tighter"
@@ -25,7 +25,7 @@
             class="text-2xl xsm:text-3xl pb-4 text-zinc-200 font-thin text-center sm:text-left uppercase tracking-tighter sm:text-4xl xl:text-5xl/none"
             v-html="member.name"
           ></h2>
-          <div v-if="member.id !== 1" class="space-y-2">
+          <div v-if="member.id !== 1" class="space-y-2 pb-12">
             <SocialMediaLinks
               :instagramLink="{ link: member.socialMediaLinks.insta, show: true }"
               :email="{ link: member.socialMediaLinks.email, show: true }"

@@ -5,7 +5,7 @@
       colorPallette.bg,
       colorPallette.text,
       colorPallette.hover,
-      'uppercase tracking-wide transition-all text-black px-4 py-2 rounded-full hidden md:inline md:ml-4',
+      'uppercase tracking-wide transition-all text-black px-4 py-2 rounded-full md:ml-4',
       { 'hover:bg-gray': scrollStatus },
     ]"
     exact

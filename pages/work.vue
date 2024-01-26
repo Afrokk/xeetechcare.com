@@ -33,7 +33,7 @@
           <div id="animated-text">
             <h2
               id="statAnimationAnchor"
-              class="text-3xl xsm:text-6xl pb-16 text-zinc-200 text-center font-bold tracking-tighter sm:text-6xl xl:text-7xl/none"
+              class="text-3xl xsm:text-6xl pt-12 pb-16 text-zinc-200 text-center font-bold tracking-tighter sm:text-6xl xl:text-7xl/none"
             >
               The <span class="gradient-text">Numbers</span>
             </h2>
