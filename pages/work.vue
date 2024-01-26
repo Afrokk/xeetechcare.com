@@ -6,18 +6,18 @@
       <Rocket />
     </div>
     <div class="flex flex-col justify-center align-center space-y-2" id="animated-text">
-      <h2
+      <h1
         class="text-3xl xsm:text-6xl mt-16 pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-6xl xl:text-7xl/none"
       >
         <span class="gradient-text">Work</span> With Us.
-      </h2>
+      </h1>
       <div
         class="text-zinc-100 flex flex-col pb-4 text-sm xsm:text-base tracking-normal md:text-base md:mx-20 content"
-        v-html="data ? data.mainDescription : ''"
+        v-html="data.mainDescription ? data.mainDescription : ''"
       ></div>
       <div
         class="text-zinc-100 flex flex-col font-normal pb-16 text-sm xsm:text-base tracking-normal md:text-base md:mx-20 content"
-        v-html="data ? data.callToAction : ''"
+        v-html="data.subDescription ? data.subDescription : ''"
       ></div>
     </div>
     <DownArrow
@@ -27,7 +27,7 @@
     />
   </section>
   <section class="bg-grey flex flex-col items-start justify-center">
-    <div class="z-20 max-w-screen-xl bottom- mx-auto flex flex-wrap justify-center items-center">
+    <div class="z-20 max-w-screen-xl mx-auto flex flex-wrap justify-center items-center">
       <div class="container px-4">
         <div class="flex flex-col justify-center text-center" ref="statsSection">
           <div id="animated-text">
@@ -165,17 +165,40 @@
       <ImageMarquee :paths="marqueeLogos" />
     </div>
   </section>
-  <Separator />
-  <section
-    id="pastCollabs"
-    class="flex flex-col text-center justify-center items-center bg-gray pt-0 overflow-x-hidden"
-  >
-    <h2
-      class="text-3xl pb-8 text-zinc-200 text-center font-bold tracking-tighter sm:text-4xl xl:text-5xl"
-    >
-      Previous Collaborations
-    </h2>
-    <p class="text-white h-12 w-12">WIP</p>
+  <section class="bg-grey flex text-zinc-200 flex-col items-start justify-center">
+    <div class="z-20 max-w-screen-xl mx-auto flex flex-wrap justify-center items-center">
+      <Separator />
+      <h2
+        class="text-3xl xsm:text-5xl pb-14 text-zinc-200 text-center font-bold tracking-tighter sm:text-6xl xl:text-7xl/none"
+      >
+        Past <span class="gradient-text">Collaborations</span>
+      </h2>
+      <div>
+        <PastCollabs />
+      </div>
+      <Separator />
+    </div>
+  </section>
+  <section class="bg-grey flex text-zinc-200 flex-col items-start justify-center">
+    <div class="z-20 max-w-screen-xl mx-auto flex flex-col flex-wrap justify-center items-center">
+      <h2
+        class="text-lg pb-4 text-zinc-200 text-center font-thin tracking-tighter sm:text-xl xl:text-xl"
+        v-html="data.callToAction ? data.callToAction : ''"
+      ></h2>
+      <h2
+        class="text-2xl pb-12 text-zinc-200 text-center font-thin italic tracking-tighter sm:text-4xl xl:text-4xl"
+      >
+        Reach out @
+        <span class="font-normal not-italic">
+          <a
+            :href="`mailto:${data.email ? data.email : ''}`"
+            class="gradient-text underline-effect"
+          >
+            <span class="text">{{ data ? data.email : '' }}</span>
+          </a>
+        </span>
+      </h2>
+    </div>
   </section>
 </template>
 
@@ -207,18 +230,7 @@ const marqueeLogos = [
   '/assets/img/brands/xiaomi.svg',
 ];
 
-let data: Ref;
-
-try {
-  const result = await useAsyncData('work', () => queryContent('/work').findOne());
-  data = ref(result.data.value);
-  if (data.value.mainDescription == null) {
-    data.value.mainDescription = 'Error fetching data.';
-  }
-} catch (error) {
-  console.error('Failed to fetch data:', error);
-  data = ref('Failed to fetch data.');
-}
+let data = await fetchData('work');
 
 useHead({
   title: 'Work With Us | XEETECHCARE',
@@ -238,15 +250,6 @@ onMounted(() => {
     repeat: -1,
     duration: 3,
     yoyo: true,
-  });
-
-  gsap.from('#statisticsSection', {
-    scrollTrigger: {
-      trigger: '#statisticsSection',
-      start: 'top center',
-    },
-    opacity: 0,
-    duration: 1,
   });
 
   gsap.from('.grid-item', {
@@ -270,6 +273,7 @@ onMounted(() => {
 defineExpose({
   marqueeLogos,
   statStartVals,
+  data,
 });
 
 defineComponent({
@@ -283,5 +287,28 @@ defineComponent({
 .content p span {
   color: #f97314;
   font-weight: bold;
+}
+
+.underline-effect {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.underline-effect::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.underline-effect:hover::after {
+  transform: scaleX(1);
 }
 </style>

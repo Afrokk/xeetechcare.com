@@ -1,12 +1,17 @@
-# Content for Work page.
-# HTML elements.
+# Content for Work Page.
+# Supports HTML.
 
-# Main Description:
 mainDescription: |
   <p>Our journey has been a blast, working with a whole spectrum of cool brands, from up-and-coming 
   <span>startups</span> to <span>big industry names</span>. We love mixing it up with the latest tech scoops, 
   honest reviews, and head-to-head comparisons that our audience loves.</p>
 
-callToAction: |
+subDescription: |
   Curious about what we've achieved and who we've worked with? Check out our stats, previous collaborations, 
   and the impact we've made down below.
+
+callToAction: |
+  Wondering how XEETECHCARE can help <span class="font-normal">maximize</span>
+  your brand's marketing campaigns?
+
+email: xeetechcare@delkatalents.com
