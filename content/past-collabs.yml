@@ -1,0 +1,44 @@
+# Content for Collabs component.
+# Supports HTML.
+
+collabs:
+  - name: Anker
+    videoId: d2rfrgxbQMk
+    date: '2023'
+    views: '1.5M+'
+    type: 'Mid-roll Integration'
+    description: |
+      We teamed up with Anker to showcase their latest innovation in compact wall chargers. 
+      Our charging test video garnered massive attention with over 
+      <span class="font-bold">1.5 million</span> views. This directed a significant 
+      audience to their product pages, boosting sales and consumer interest 
+      with affiliate Amazon link.
+  - name: Oppo
+    videoId: CglIc1wPlZU
+    date: '2022'
+    views: '800K+'
+    type: 'Dedicated Video + Instagram Spotlight'
+    description: |
+      In 2022, we joined forces with OPPO to look at their latest flagship phone, the
+      Find X5 Pro. Our in-depth review and camera test videos racked up over 
+      <span class="font-bold"> 800,000+</span> views across combined.
+    subDescription: |
+      This collaboration not only showcased the impressive capabilities of the Find X5 Pro 
+      but also played a crucial role in driving awareness and interest towards 
+      OPPO's latest and greatest offering.
+
+  - name: Baseus
+    videoId: orxS9qJsRkY
+    date: '2022'
+    views: '200K+'
+    type: 'Mid-roll Integration'
+    description: |
+      We worked with Baseus to promote their latest suite of GaN powerbanks, powerstrips 
+      and their new wireless earbuds. Featured in this 
+      <span class="italic">exclusive</span> news video,
+      which got over <span class="font-bold">200,000+</span> 
+      views, several thousand unique viewers were redirected to the product website, 
+      significantly boosting direct sales.
+    subDescription: |
+      Since 2021, our ongoing partnership with Baseus has been 
+      instrumental in amplifying their marketing campaigns.
