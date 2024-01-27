@@ -15,7 +15,7 @@
           </h1>
           <p
             v-html="data.heroSubheading ? data.heroSubheading : ''"
-            class="text-center hidden font-normal xsm:block sm:text-base md:text-lg lg:text-xl dark:text-zinc-300 mx-auto"
+            class="text-center hidden text-zinc-100 font-normal xsm:block sm:text-base md:text-lg lg:text-xl mx-auto"
           ></p>
           <div class="pt-3">
             <SocialMediaLinks />
@@ -46,7 +46,7 @@
             </h2>
             <p
               v-html="data.youtubeFeedDescripton ? data.youtubeFeedDescripton : ''"
-              class="text-zinc-200 pb-4 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
+              class="text-zinc-200 pb-4 text-center text-base tracking-tight sm:text-lg xl:text-xl/none"
             ></p>
             <YoutubeFeed />
           </div>
@@ -73,7 +73,7 @@
               </h2>
               <p
                 v-html="data.instaFeedDescripton ? data.instaFeedDescripton : ''"
-                class="text-zinc-200 pb-4 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
+                class="text-zinc-200 pb-4 text-center text-base tracking-tight sm:text-lg xl:text-xl/none"
               ></p>
               <PopularOnInstagram />
             </div>
@@ -91,7 +91,7 @@
               </h2>
               <p
                 v-html="data.twitterFeedDescripton ? data.twitterFeedDescripton : ''"
-                class="text-zinc-200 pb-4 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
+                class="text-zinc-200 pb-4 text-center text-base tracking-tight sm:text-lg xl:text-xl/none"
               ></p>
               <TwitterFeed />
             </div>
@@ -106,7 +106,7 @@
               </h2>
               <p
                 v-html="data.tiktokFeedDescripton ? data.tiktokFeedDescripton : ''"
-                class="text-zinc-200 pb-4 text-center text-base font-light tracking-tight sm:text-lg xl:text-xl/none"
+                class="text-zinc-200 pb-4 text-center text-base tracking-tight sm:text-lg xl:text-xl/none"
               ></p>
               <TikTokFeed />
             </div>

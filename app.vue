@@ -13,6 +13,8 @@
   font-family: 'Inter';
   src: url('/fonts/Inter-Regular.woff2') format('woff2');
   font-weight: 400;
+  font-display: auto;
+  unicode-range: U+000-5FF;
   font-style: normal;
 }
 
@@ -20,13 +22,17 @@
   font-family: 'Inter';
   src: url('/fonts/Inter-Bold.woff2') format('woff2');
   font-weight: 700;
+  font-display: auto;
+  unicode-range: U+000-5FF;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Inter';
-  src: url('/fonts/Inter-Light.woff2') format('woff2');
-  font-weight: 300;
+  src: url('/fonts/Inter-Thin.woff2') format('woff2');
+  font-weight: 100;
+  unicode-range: U+000-5FF;
+  font-display: auto;
   font-style: normal;
 }
 
