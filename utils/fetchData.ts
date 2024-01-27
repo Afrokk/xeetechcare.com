@@ -3,7 +3,7 @@
  * @param endpoint The endpoint to fetch data from.
  * @returns A Promise that resolves to the fetched data.
  */
-export default async function fetchData(endpoint: string): Promise<Ref<any>> {
+export default async function fetchData(endpoint: string): Promise<Ref> {
   try {
     const result = await useAsyncData(endpoint, () => queryContent(`/${endpoint}`).findOne());
     return ref(result.data.value);

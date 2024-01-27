@@ -8,6 +8,10 @@ let cache: Cache = {
   fetchTime: null,
 };
 
+/**
+ * Checks if the cache is valid based on the fetch time and cache validity duration.
+ * @returns A boolean value indicating whether the cache is valid or not.
+ */
 function isCacheValid(): boolean {
   return (
     cache.videos !== null &&
@@ -16,6 +20,11 @@ function isCacheValid(): boolean {
   );
 }
 
+/**
+ * Fetches videos from YouTube API.
+ * @returns A promise that resolves to an array of Video objects.
+ * @throws An error if the API request fails or no videos are found.
+ */
 async function fetchVideos(): Promise<Video[]> {
   const params = new URLSearchParams({
     part: 'snippet',
@@ -39,6 +48,11 @@ async function fetchVideos(): Promise<Video[]> {
   return data.items;
 }
 
+/**
+ * Retrieves videos from cache if available and valid, otherwise fetches videos from the API.
+ * Sets the response status code and content type headers accordingly.
+ * @param event - The event object containing the request and response objects.
+ */
 export default defineEventHandler(async (event) => {
   try {
     let videos: Video[];

@@ -128,14 +128,25 @@ const route = useRoute();
 let mobileMenuOpen = ref(false);
 let isScrolled = ref(false);
 
+/**
+ * Toggles the mobile menu open or closed.
+ */
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value;
 };
 
-const isRouteActive = (routePath: string) => {
+/**
+ * Checks if the current route is active.
+ * @param {string} routePath - The path of the route to check.
+ * @returns {boolean} - True if the current route is active, false otherwise.
+ */
+const isRouteActive = (routePath: string): boolean => {
   return route.path === routePath;
 };
 
+/**
+ * Handles the scroll event and updates the value of `isScrolled`.
+ */
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 150;
 };

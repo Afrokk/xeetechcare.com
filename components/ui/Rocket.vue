@@ -375,7 +375,11 @@
 </template>
 
 <script setup>
-onMounted(() => {
+/**
+ * Animates the rocket.
+ * This function checks if the user's preference is to reduce motion, and if not, it initializes the animation.
+ */
+function animateRocket() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     return;
   } else {
@@ -662,5 +666,9 @@ onMounted(() => {
       'http://www.w3.org/1999/xlink',
     );
   }
+}
+
+onMounted(() => {
+  animateRocket();
 });
 </script>

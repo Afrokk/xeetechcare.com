@@ -1,5 +1,9 @@
 import { Post } from '@/types/post';
 
+/**
+ * Retrieves a list of posts and sends them as a JSON response.
+ * @param event - The event object containing the request details.
+ */
 export default defineEventHandler(async (event) => {
   const posts: Post[] = [
     {

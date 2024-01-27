@@ -121,7 +121,6 @@
 import { Vanta, VantaEffect } from '@/types/vanta';
 import { faYoutube, faInstagram, faTwitter, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { gsap } from 'gsap';
 
 useHead({
   title: 'XEETECHCARE',
@@ -140,7 +139,11 @@ let dotEffect: VantaEffect | null = null;
 
 let data = await fetchData('home');
 
-onMounted(() => {
+/**
+ * @function initDots()
+ * Initializes the Threejs dot effect.
+ */
+function initDots() {
   dotEffect = VANTA.DOTS({
     el: '#render-dots',
     mouseControls: true,
@@ -156,16 +159,11 @@ onMounted(() => {
     spacing: 23.0,
     showLines: false,
   });
+}
 
-  const text = document.querySelectorAll('.gradient-text');
-  gsap.to(text, {
-    backgroundPosition: '200% 0%',
-    ease: 'power1.inOut',
-    repeat: -1,
-    duration: 3,
-    yoyo: true,
-  });
-
+onMounted(() => {
+  initDots();
+  animateGradientText();
   document.body.classList.add('overflow-x-hidden');
 });
 

@@ -24,7 +24,6 @@
  *
  * @function loadTwitterWidget
  */
-
 function loadTwitterWidget() {
   const checkTwitterWidget = setInterval(() => {
     const twttr = (window as Window).twttr;

@@ -14,7 +14,7 @@
         class="card flex flex-col sm:flex-row rounded-lg items-center align-middle max-w-2xl m-3"
       >
         <div class="flex items-center justify-center sm:justify-start px-6 pt-4 w-full sm:w-3/4">
-          <NuxtImg 
+          <NuxtImg
             width="500"
             height="500"
             format="webp"
@@ -61,7 +61,11 @@ useHead({
 
 let data = await fetchData('team');
 
-onMounted(() => {
+/**
+ * @function animateCards()
+ * Animates the team member cards on the page.
+ */
+function animateCards() {
   const cards = document.querySelectorAll('.card');
   gsap.from(cards, {
     opacity: 0,
@@ -70,6 +74,11 @@ onMounted(() => {
     duration: 1,
     ease: 'power2.out',
   });
+}
+
+onMounted(() => {
+  animateGradientText();
+  animateCards();
 });
 
 defineExpose({ data });

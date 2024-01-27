@@ -47,7 +47,12 @@ const videos = ref<Video[]>([]);
 const err = ref<string | null>(null);
 const loading = ref(true);
 
-onMounted(async () => {
+/**
+ * Fetches videos from the API and updates the videos and loading state.
+ * @async 
+ * @throws {Error} If the API request fails.
+ */
+async function fetchVideos() {
   try {
     const response = await fetch('/api/getVideos');
     if (!response.ok) {
@@ -60,6 +65,10 @@ onMounted(async () => {
     err.value = error as string;
     loading.value = false;
   }
+}
+
+onMounted(async () => {
+  fetchVideos();
 });
 
 defineExpose({

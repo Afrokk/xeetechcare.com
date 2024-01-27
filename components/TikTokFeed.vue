@@ -25,7 +25,13 @@ const reel = ref<string[]>([
 const reelData = ref<Reel[]>([]);
 const fetchError = ref<string | null>(null);
 
-onMounted(async () => {
+/**
+ * Fetches the data for TikTok reels updates the reelData and error state
+ * @async
+ * @function fetchReels
+ * @throws {Error} If the API request fails.
+ */
+async function fetchReels(): Promise<void> {
   try {
     const fetchPromises = reel.value.map((url) =>
       fetch(`https://www.tiktok.com/oembed?url=${url}`).then((response) => response.json()),
@@ -36,6 +42,10 @@ onMounted(async () => {
     fetchError.value = 'Failed to fetch video data';
     console.error(fetchError.value, error);
   }
+}
+
+onMounted(async () => {
+  await fetchReels();
 });
 </script>
 

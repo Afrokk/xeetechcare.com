@@ -1,11 +1,11 @@
 <template>
   <div class="animate-marquee gap-4 flex overflow-hidden select-none relative">
-    <ul class="marquee_content shrink-0 flex justify-around min-w-full">
+    <ul class="marquee-content shrink-0 flex justify-around min-w-full">
       <li v-for="(logo, index) in paths" :key="index">
         <img :src="logo as string" alt="Brand logos." class="h-9 sm:h-16 xl:h-16 2xl:h-20 w-auto" />
       </li>
     </ul>
-    <ul class="marquee_content" aria-hidden="true">
+    <ul class="marquee-content" aria-hidden="true">
       <li v-for="(logo, index) in paths" :key="index">
         <NuxtImg
           :src="logo as string"
@@ -34,7 +34,7 @@ defineProps({
   position: relative;
 }
 
-.marquee_content {
+.marquee-content {
   flex-shrink: 0;
   display: flex;
   justify-content: space-around;
@@ -61,7 +61,7 @@ defineProps({
     --gap: 2rem;
   }
 
-  .marquee_content {
+  .marquee-content {
     animation: scroll 25s linear infinite;
   }
 }

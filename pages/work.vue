@@ -204,11 +204,11 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import CountUp from 'vue-countup-v3';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { faYoutube, faInstagram, faTwitter, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import CountUp from 'vue-countup-v3';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -242,25 +242,28 @@ useHead({
   ],
 });
 
-onMounted(() => {
-  const text = document.querySelectorAll('.gradient-text');
-  gsap.to(text, {
-    backgroundPosition: '200% 0%',
-    ease: 'power1.inOut',
-    repeat: -1,
-    duration: 3,
-    yoyo: true,
-  });
+/**
+ * @function initCountUp()
+ * Initializes the count-up on the stats.
+ */
+function initCountUp() {
+  if (!isCountStarted) {
+    isCountStarted = true;
+    statStartVals.value = statEndVals;
+  }
+}
 
+/**
+ * @function animateStatsGrid()
+ * Animates the stats grid on scroll.
+ */
+function animateStatsGrid() {
   gsap.from('.grid-item', {
     scrollTrigger: {
       trigger: '#statAnimationAnchor',
       start: 'top center',
       onEnter: () => {
-        if (!isCountStarted) {
-          isCountStarted = true;
-          statStartVals.value = [...statEndVals];
-        }
+        initCountUp();
       },
     },
     opacity: 0,
@@ -268,6 +271,11 @@ onMounted(() => {
     stagger: 0.2,
     duration: 1,
   });
+}
+
+onMounted(() => {
+  animateGradientText();
+  animateStatsGrid();
 });
 
 defineExpose({
