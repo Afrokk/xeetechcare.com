@@ -49,7 +49,7 @@ const loading = ref(true);
 
 /**
  * Fetches videos from the API and updates the videos and loading state.
- * @async 
+ * @async
  * @throws {Error} If the API request fails.
  */
 async function fetchVideos() {

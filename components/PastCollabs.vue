@@ -45,4 +45,6 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 library.add(faEye);
 
 let data = await fetchData('past-collabs');
+
+defineExpose({ data });
 </script>
