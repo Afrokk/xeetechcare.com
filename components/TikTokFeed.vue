@@ -17,8 +17,8 @@
 import { Reel } from '@/types/reel';
 
 const reel = ref<string[]>([
+  'https://www.tiktok.com/@xeetechcare0/video/7330282108134395154',
   'https://www.tiktok.com/@xeetechcare0/video/7267641357299141906',
-  'https://www.tiktok.com/@xeetechcare0/video/7283499104011848968',
   'https://www.tiktok.com/@xeetechcare0/video/7131796812633001217',
 ]);
 

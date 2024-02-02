@@ -54,14 +54,11 @@
       </section>
     </div>
     <div class="flex justify-center bg-gray">
-      <section
-        id="socialsSection"
-        class="z-20 pb-6 max-w-screen-xl mx-auto flex flex-wrap justify-center items-center"
-      >
+      <section class="z-20 pb-6 max-w-screen-xl mx-auto flex flex-wrap justify-center items-center">
         <div class="container px-4 md:px-6 flex flex-col md:flex-row justify-center">
           <div class="w-full p-4 text-zinc-100">
             <Separator />
-            <div class="space-y-2" id="animated-text">
+            <div class="space-y-2" id="instaSection">
               <h2
                 class="text-4xl pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
               >
@@ -80,9 +77,12 @@
           </div>
         </div>
         <Separator />
-        <div class="container px-4 md:px-6 flex flex-col md:flex-row justify-center text-center">
+        <div
+          id="socialsSection"
+          class="container px-4 md:px-6 flex flex-col md:flex-row justify-center text-center"
+        >
           <div class="md:w-2/4 p-0 sm:p-4 text-zinc-100">
-            <div class="space-y-2" id="animated-text">
+            <div class="space-y-2">
               <h2
                 class="text-4xl pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
               >
@@ -97,7 +97,7 @@
             </div>
           </div>
           <div class="md:w-2/4 p-0 sm:p-4 mt-10 sm:mt-0 text-zinc-100">
-            <div class="space-y-2" id="animated-text">
+            <div class="space-y-2">
               <h2
                 class="text-4xl pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
               >
@@ -121,6 +121,10 @@
 import { Vanta, VantaEffect } from '@/types/vanta';
 import { faYoutube, faInstagram, faTwitter, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 useHead({
   title: 'XEETECHCARE',
@@ -164,6 +168,19 @@ function initDots() {
 onMounted(() => {
   initDots();
   animateGradientText();
+
+  gsap.from('#youtubeSection', {
+    scrollTrigger: {
+      trigger: '#youtubeSection',
+      start: 'top 75%',
+      end: 'top 50%',
+    },
+    duration: 1.5,
+    opacity: 0,
+    y: 150,
+    ease: 'power2.out',
+  });
+
   document.body.classList.add('overflow-x-hidden');
 });
 
