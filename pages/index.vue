@@ -56,9 +56,9 @@
     <div class="flex justify-center bg-gray">
       <section class="z-20 pb-6 max-w-screen-xl mx-auto flex flex-wrap justify-center items-center">
         <div class="container px-4 md:px-6 flex flex-col md:flex-row justify-center">
-          <div class="w-full p-4 text-zinc-100">
+          <div class="w-full p-4 text-zinc-100" id="instaSection">
             <Separator />
-            <div class="space-y-2" id="instaSection">
+            <div class="space-y-2">
               <h2
                 class="text-4xl pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
               >
@@ -165,20 +165,44 @@ function initDots() {
   });
 }
 
+/**
+ * @function animateSection
+ * Animates a section.
+ *
+ * @param {string} selector - The CSS selector of the section to animate.
+ * @param {number} duration - The duration of the animation in seconds.
+ * @param {string} start - The starting position of the animation. Default is 'top 75%'.
+ * @param {string} end - The ending position of the animation. Default is 'top 50%'.
+ */
+function animateSection(
+  selector: string,
+  duration: number,
+  start: string = 'top 75%',
+  end: string = 'top 50%',
+) {
+  if (!document.querySelector(selector)) {
+    return;
+  }
+  gsap.from(selector, {
+    scrollTrigger: {
+      trigger: selector,
+      start: start,
+      end: end,
+    },
+    duration: duration,
+    opacity: 0,
+    y: 150,
+    ease: 'power2.out',
+  });
+}
+
 onMounted(() => {
   initDots();
   animateGradientText();
 
-  gsap.from('#youtubeSection', {
-    scrollTrigger: {
-      trigger: '#youtubeSection',
-      start: 'top 75%',
-      end: 'top 50%',
-    },
-    duration: 1.5,
-    opacity: 0,
-    y: 150,
-    ease: 'power2.out',
+  nextTick(() => {
+    animateSection('#youtubeSection', 1.5);
+    animateSection('#instaSection', 1.5);
   });
 
   document.body.classList.add('overflow-x-hidden');

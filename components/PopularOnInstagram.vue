@@ -18,6 +18,7 @@
         v-for="(post, index) in posts"
         :key="index"
         :class="{ 'pb-8 sm:pb-0': index === 0 }"
+        id="post"
         class="w-full md:w-1/2 mx-auto"
       >
         <div class="video-responsive flex justify-center rounded-md" v-html="post.frame"></div>
@@ -42,6 +43,10 @@
 import { Post } from '@/types/post';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const posts = ref<Post[]>([]);
 const err = ref<string | null>(null);
@@ -68,8 +73,29 @@ async function getPosts() {
   }
 }
 
+/**
+ * @function animatePosts
+ * Animates the individual posts on the Instagram Section.
+ */
+function animatePosts() {
+  gsap.from('#post > div', {
+    scrollTrigger: {
+      trigger: '#post',
+      start: 'top 95%',
+      end: 'top 50%',
+      scrub: 1,
+    },
+    duration: 1.5,
+    opacity: 0,
+    y: 150,
+    ease: 'back.inOut',
+    stagger: 0.05,
+  });
+}
+
 onMounted(async () => {
   await getPosts();
+  animatePosts();
 });
 
 defineComponent({
