@@ -7,6 +7,7 @@
         ? 'flex flex-col md:flex-row w-screen-xl items-center justify-center'
         : 'flex flex-col md:flex-row-reverse w-screen-xl items-center justify-center'
     "
+    id="collabs"
   >
     <div class="w-full md:w-2/4 px-10 py-5 md:px-10 md:py-6 md:h-auto aspect-video md:aspect-video">
       <iframe
@@ -38,13 +39,40 @@
 </template>
 
 <script setup lang="ts">
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+gsap.registerPlugin(ScrollTrigger);
 
 library.add(faEye);
 
 let data = await fetchData('past-collabs');
 
 defineExpose({ data });
+
+/**
+ * @function animateCollabs
+ * Animates the collabs section.
+ */
+function animateCollabs() {
+  gsap.from('#collabs > div', {
+    scrollTrigger: {
+      trigger: '#collabs',
+      start: 'top 75%',
+      end: 'top 50%',
+    },
+    duration: 1.5,
+    opacity: 0,
+    y: 150,
+    ease: 'back.inOut',
+    stagger: 0.1,
+  });
+}
+
+onMounted(() => {
+  animateCollabs();
+});
 </script>

@@ -165,7 +165,7 @@
       <ImageMarquee :paths="marqueeLogos" />
     </div>
   </section>
-  <section class="bg-grey flex text-zinc-200 flex-col items-start justify-center">
+  <section id="pastCollabs" class="bg-grey flex text-zinc-200 flex-col items-start justify-center">
     <div class="z-20 max-w-screen-xl mx-auto flex flex-wrap justify-center items-center">
       <Separator />
       <h2
@@ -276,6 +276,19 @@ function animateStatsGrid() {
 onMounted(() => {
   animateGradientText();
   animateStatsGrid();
+
+  gsap.from('#pastCollabs', {
+    scrollTrigger: {
+      trigger: '#pastCollabs',
+      start: 'top 75%',
+      end: 'top 50%',
+    },
+    scrub: true,
+    duration: 1.5,
+    opacity: 0,
+    y: 150,
+    ease: 'power2.out',
+  });
 });
 
 defineExpose({

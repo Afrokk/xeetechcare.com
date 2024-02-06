@@ -46,6 +46,7 @@
     #fcb12f 100%
   );
   background-size: 200% 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
