@@ -129,7 +129,7 @@
                   <CountUp :endVal="statStartVals[4]" :duration="2" />
                   <span class="ml-1 text-zinc-200">+</span>
                 </div>
-                <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg">Video Views</p>
+                <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg">Avg. Video Views</p>
               </div>
               <div
                 class="grid-item flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg"
@@ -214,7 +214,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 let isCountStarted = false;
 let statStartVals = ref(Array(6).fill(0));
-const statEndVals = [1710000, 115000, 72000, 750, 65000, 630000];
+const statEndVals = [1720000, 119000, 72000, 750, 100000, 820000];
 
 const marqueeLogos = [
   '/assets/img/brands/anker.svg',
