@@ -81,18 +81,18 @@
               >
                 <div className="p-2 rounded-full">
                   <font-awesome-icon
-                    :icon="faTwitter"
-                    class="w-28 h-28 xsm:h-24 xsm:w-24 md:w-16 md:h-16 text-blue-500"
+                    :icon="faTiktok"
+                    class="w-28 h-28 xsm:h-24 xsm:w-24 md:w-16 md:h-16 text-pink-600"
                   />
-                  <h5 class="font-bold text-zinc-200 text-lg xsm:text-xl md:text-lg">Twitter</h5>
+                  <h2 class="font-bold text-zinc-200 text-lg xsm:text-xl md:text-lg">TikTok</h2>
                 </div>
                 <div
                   class="flex items-center text-2xl xsm:text-6xl text-center font-bold tracking-tighter xl:text-6xl/none text-orange-500"
                 >
-                  <CountUp :endVal="statStartVals[2]" :duration="1.5" />
+                  <CountUp :endVal="statStartVals[5]" :duration="2" />
                   <span class="ml-1 text-zinc-200">+</span>
                 </div>
-                <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg">Total Followers</p>
+                <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg"><span class="italic">Avg.</span> Monthly Views</p>
               </div>
               <div
                 class="grid-item flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg"
@@ -129,25 +129,25 @@
                   <CountUp :endVal="statStartVals[4]" :duration="2" />
                   <span class="ml-1 text-zinc-200">+</span>
                 </div>
-                <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg">Avg. Video Views</p>
+                <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg"><span class="italic">Avg.</span> Monthly Views</p>
               </div>
               <div
                 class="grid-item flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg"
               >
                 <div className="p-2 rounded-full">
                   <font-awesome-icon
-                    :icon="faTiktok"
-                    class="w-28 h-28 xsm:h-24 xsm:w-24 md:w-16 md:h-16 text-pink-600"
+                    :icon="faTwitter"
+                    class="w-28 h-28 xsm:h-24 xsm:w-24 md:w-16 md:h-16 text-blue-500"
                   />
-                  <h2 class="font-bold text-zinc-200 text-lg xsm:text-xl md:text-lg">TikTok</h2>
+                  <h5 class="font-bold text-zinc-200 text-lg xsm:text-xl md:text-lg">Twitter</h5>
                 </div>
                 <div
                   class="flex items-center text-2xl xsm:text-6xl text-center font-bold tracking-tighter xl:text-6xl/none text-orange-500"
                 >
-                  <CountUp :endVal="statStartVals[5]" :duration="2" />
+                  <CountUp :endVal="statStartVals[2]" :duration="1.5" />
                   <span class="ml-1 text-zinc-200">+</span>
                 </div>
-                <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg">Total Likes</p>
+                <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg">Total Followers</p>
               </div>
             </div>
           </div>
@@ -214,7 +214,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 let isCountStarted = false;
 let statStartVals = ref(Array(6).fill(0));
-const statEndVals = [1720000, 119000, 72000, 750, 100000, 820000];
+const statEndVals = [1720000, 119000, 72000, 750, 6000000, 4100000];
 
 const marqueeLogos = [
   '/assets/img/brands/anker.svg',
