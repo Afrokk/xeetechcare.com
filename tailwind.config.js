@@ -20,6 +20,9 @@ export default {
       screens: {
         xsm: '384px',
       },
+      scale: {
+        '102': '1.02',
+      },
       maxWidth: {
         xl: '1140px',
       },

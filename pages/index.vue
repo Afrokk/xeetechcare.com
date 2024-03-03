@@ -96,7 +96,7 @@
               <TwitterFeed />
             </div>
           </div>
-          <div class="md:w-2/4 p-0 sm:p-4 mt-10 sm:mt-0 text-zinc-100">
+          <div class="md:w-2/4 p-0 sm:p-4 mt-10 md:mt-0 text-zinc-100">
             <div class="space-y-2">
               <h2
                 class="text-4xl pb-4 text-zinc-200 text-center font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
