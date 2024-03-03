@@ -199,12 +199,8 @@ function animateSection(
 onMounted(() => {
   initDots();
   animateGradientText();
-
-  nextTick(() => {
-    animateSection('#youtubeSection', 1.5);
-    animateSection('#instaSection', 1.5);
-  });
-
+  animateSection('#youtubeSection', 1.5);
+  animateSection('#instaSection', 1.5);
   document.body.classList.add('overflow-x-hidden');
 });
 
