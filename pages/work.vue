@@ -13,11 +13,11 @@
       </h1>
       <div
         class="text-zinc-100 flex flex-col pb-4 text-sm xsm:text-base tracking-normal md:text-base md:mx-20 content"
-        v-html="data.mainDescription ? data.mainDescription : ''"
+        v-html="data.mainDescription"
       ></div>
       <div
         class="text-zinc-100 flex flex-col font-normal pb-16 text-sm xsm:text-base tracking-normal md:text-base md:mx-20 content"
-        v-html="data.subDescription ? data.subDescription : ''"
+        v-html="data.subDescription"
       ></div>
     </div>
     <DownArrow
@@ -33,7 +33,7 @@
           <div id="animated-text">
             <h2
               id="statAnimationAnchor"
-              class="text-3xl xsm:text-6xl pt-12 pb-16 text-zinc-200 text-center font-bold tracking-tighter sm:text-6xl xl:text-7xl/none"
+              class="text-4xl sm:text-6xl xl:text-7xl/none pt-12 pb-16 text-zinc-200 text-center font-bold tracking-tighter"
             >
               The <span class="gradient-text">Numbers</span>
             </h2>
@@ -51,7 +51,7 @@
                   <h5 class="font-bold text-zinc-200 text-lg xsm:text-xl md:text-lg">YouTube</h5>
                 </div>
                 <div
-                  class="flex items-center text-2xl xsm:text-6xl text-center font-bold tracking-tighter xl:text-6xl/none text-orange-500"
+                  class="flex items-center text-3xl xsm:text-6xl lg:text-5xl xl:text-6xl/none text-center font-bold tracking-tighter text-orange-500"
                 >
                   <CountUp :endVal="statStartVals[0]" :duration="1.5" />
                   <span class="ml-1 text-zinc-200">+</span>
@@ -69,7 +69,7 @@
                   <h5 class="font-bold text-zinc-200 text-lg xsm:text-xl md:text-lg">Instagram</h5>
                 </div>
                 <div
-                  class="flex items-center text-2xl xsm:text-6xl text-center font-bold tracking-tighter xl:text-6xl/none text-orange-500"
+                  class="flex items-center text-3xl xsm:text-6xl lg:text-5xl xl:text-6xl/none text-center font-bold tracking-tighter text-orange-500"
                 >
                   <CountUp :endVal="statStartVals[1]" :duration="1.5" />
                   <span class="ml-1 text-zinc-200">+</span>
@@ -87,12 +87,14 @@
                   <h2 class="font-bold text-zinc-200 text-lg xsm:text-xl md:text-lg">TikTok</h2>
                 </div>
                 <div
-                  class="flex items-center text-2xl xsm:text-6xl text-center font-bold tracking-tighter xl:text-6xl/none text-orange-500"
+                  class="flex items-center text-3xl xsm:text-6xl lg:text-5xl xl:text-6xl/none text-center font-bold tracking-tighter text-orange-500"
                 >
                   <CountUp :endVal="statStartVals[5]" :duration="2" />
                   <span class="ml-1 text-zinc-200">+</span>
                 </div>
-                <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg"><span class="italic">Avg.</span> Monthly Views</p>
+                <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg">
+                  <span class="italic">Avg.</span> Monthly Views
+                </p>
               </div>
               <div
                 class="grid-item flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg"
@@ -105,7 +107,7 @@
                   <h5 class="font-bold text-zinc-200 text-lg xsm:text-xl md:text-lg">YouTube</h5>
                 </div>
                 <div
-                  class="flex items-center text-2xl xsm:text-6xl text-center font-bold tracking-tighter xl:text-6xl/none text-orange-500"
+                  class="flex items-center text-3xl xsm:text-6xl lg:text-5xl xl:text-6xl/none text-center font-bold tracking-tighter text-orange-500"
                 >
                   <CountUp :endVal="statStartVals[3]" :duration="2" />
                   <span class="ml-2">Million</span>
@@ -124,12 +126,14 @@
                   <h5 class="font-bold text-zinc-200 text-lg xsm:text-xl md:text-lg">Instagram</h5>
                 </div>
                 <div
-                  class="flex items-center text-2xl xsm:text-6xl text-center font-bold tracking-tighter xl:text-6xl/none text-orange-500"
+                  class="flex items-center text-3xl xsm:text-6xl lg:text-5xl xl:text-6xl/none text-center font-bold tracking-tighter text-orange-500"
                 >
                   <CountUp :endVal="statStartVals[4]" :duration="2" />
                   <span class="ml-1 text-zinc-200">+</span>
                 </div>
-                <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg"><span class="italic">Avg.</span> Monthly Views</p>
+                <p class="text-zinc-200 pt-2 xsm:text-xl mg:text-lg">
+                  <span class="italic">Avg.</span> Monthly Views
+                </p>
               </div>
               <div
                 class="grid-item flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg"
@@ -142,7 +146,7 @@
                   <h5 class="font-bold text-zinc-200 text-lg xsm:text-xl md:text-lg">Twitter</h5>
                 </div>
                 <div
-                  class="flex items-center text-2xl xsm:text-6xl text-center font-bold tracking-tighter xl:text-6xl/none text-orange-500"
+                  class="flex items-center text-3xl xsm:text-6xl lg:text-5xl xl:text-6xl/none text-center font-bold tracking-tighter text-orange-500"
                 >
                   <CountUp :endVal="statStartVals[2]" :duration="1.5" />
                   <span class="ml-1 text-zinc-200">+</span>
@@ -182,19 +186,16 @@
   <section class="bg-grey flex text-zinc-200 flex-col items-start justify-center">
     <div class="z-20 max-w-screen-xl mx-auto flex flex-col flex-wrap justify-center items-center">
       <h2
-        class="text-lg pb-4 text-zinc-200 text-center font-thin tracking-tighter sm:text-xl xl:text-xl"
-        v-html="data.callToAction ? data.callToAction : ''"
+        class="text-sm xsm:text-xl p-4 text-zinc-200 text-center font-thin tracking-tighter"
+        v-html="data.callToAction"
       ></h2>
       <h2
-        class="text-2xl pb-12 text-zinc-200 text-center font-thin italic tracking-tighter sm:text-4xl xl:text-4xl"
+        class="text-base xsm:text-2xl sm:text-4xl pb-12 text-zinc-200 text-center font-thin italic tracking-tighter"
       >
         Reach out @
         <span class="font-normal not-italic">
-          <a
-            :href="`mailto:${data.email ? data.email : ''}`"
-            class="gradient-text underline-effect"
-          >
-            <span class="text">{{ data ? data.email : '' }}</span>
+          <a :href="`mailto:${data.email}`" class="gradient-text underline-effect">
+            <span class="text">{{ data.email }}</span>
           </a>
         </span>
       </h2>
@@ -203,6 +204,7 @@
 </template>
 
 <script setup lang="ts">
+import { WorkData } from '@/types/work';
 import { ref, onMounted } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -230,7 +232,7 @@ const marqueeLogos = [
   '/assets/img/brands/xiaomi.svg',
 ];
 
-let data = await fetchData('work');
+let data: WorkData = await fetchData<WorkData>('work');
 
 useHead({
   title: 'Work With Us | XEETECHCARE',
@@ -243,7 +245,6 @@ useHead({
 });
 
 /**
- * @function initCountUp()
  * Initializes the count-up on the stats.
  */
 function initCountUp() {
@@ -254,7 +255,6 @@ function initCountUp() {
 }
 
 /**
- * @function animateStatsGrid()
  * Animates the stats grid on scroll.
  */
 function animateStatsGrid() {
@@ -273,22 +273,27 @@ function animateStatsGrid() {
   });
 }
 
-onMounted(() => {
-  animateGradientText();
-  animateStatsGrid();
-
+/**
+ * Animates the heading for past collaborations.
+ */
+function animateCollabsHeading() {
   gsap.from('#pastCollabs', {
     scrollTrigger: {
       trigger: '#pastCollabs',
       start: 'top 75%',
       end: 'top 50%',
     },
-    scrub: true,
     duration: 1.5,
     opacity: 0,
     y: 150,
     ease: 'power2.out',
   });
+}
+
+onMounted(() => {
+  animateGradientText();
+  animateStatsGrid();
+  animateCollabsHeading();
 });
 
 defineExpose({

@@ -1,4 +1,4 @@
-export type Post = {
+export interface Post {
   frame: string;
   caption: string;
   likeCount?: string;

@@ -1,4 +1,4 @@
-export type Reel = {
+export interface Reel {
   version: string;
   type: string;
   title: string;

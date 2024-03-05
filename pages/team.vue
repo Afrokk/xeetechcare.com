@@ -47,6 +47,7 @@
 </template>
 
 <script setup lang="ts">
+import { TeamData } from '@/types/team';
 import { gsap } from 'gsap';
 
 useHead({
@@ -59,7 +60,7 @@ useHead({
   ],
 });
 
-let data = await fetchData('team');
+let data: TeamData = await fetchData<TeamData>('team');
 
 /**
  * @function animateCards()

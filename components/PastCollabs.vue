@@ -39,6 +39,7 @@
 </template>
 
 <script setup lang="ts">
+import { CollabsData } from '@/types/collabs';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -49,12 +50,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 library.add(faEye);
 
-let data = await fetchData('past-collabs');
+let data: CollabsData = await fetchData<CollabsData>('past-collabs');
 
 defineExpose({ data });
 
 /**
- * @function animateCollabs
  * Animates the collabs section.
  */
 function animateCollabs() {

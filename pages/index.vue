@@ -9,13 +9,13 @@
         <div class="space-y-2">
           <h1
             id="animated-text"
-            class="text-2xl xsm:text-5xl text-center font-bold tracking-tighter sm:text-6xl xl:text-8xl/none"
+            class="text-2xl xsm:text-5xl text-center font-bold tracking-tighter sm:text-6xl lg:text-8xl/none"
           >
             <span class="gradient-text">XEETECHCARE</span>
           </h1>
           <p
-            v-html="data.heroSubheading ? data.heroSubheading : ''"
-            class="text-center hidden text-zinc-100 font-normal xsm:block sm:text-base md:text-lg lg:text-xl mx-auto"
+            v-html="data.heroSubheading"
+            class="text-center hidden text-zinc-100 xsm:block text-sm sm:text-sm md:text-lg mx-auto"
           ></p>
           <div class="pt-3">
             <SocialMediaLinks />
@@ -34,7 +34,7 @@
     <div class="flex justify-center bg-gray" ref="youtubeSection">
       <section
         id="youtubeSection"
-        class="z-20 pt-6 max-w-screen-xl mx-auto flex flex-wrap justify-center items-center"
+        class="z-20 pt-6 max-w-6xl mx-auto flex flex-wrap justify-center items-center"
       >
         <div class="container px-4 md:px-6 flex justify-center flex-col">
           <div class="space-y-2" id="animated-text">
@@ -45,7 +45,7 @@
               <FontAwesomeIcon :icon="faYoutube" class="text-zinc-100 h-9 sm:h-12 align-middle" />
             </h2>
             <p
-              v-html="data.youtubeFeedDescripton ? data.youtubeFeedDescripton : ''"
+              v-html="data.youtubeFeedDescripton"
               class="text-zinc-200 pb-4 text-center text-base tracking-tight sm:text-lg xl:text-xl/none"
             ></p>
             <YoutubeFeed />
@@ -54,7 +54,7 @@
       </section>
     </div>
     <div class="flex justify-center bg-gray">
-      <section class="z-20 pb-6 max-w-screen-xl mx-auto flex flex-wrap justify-center items-center">
+      <section class="z-20 pb-6 max-w-6xl mx-auto flex flex-wrap justify-center items-center">
         <div class="container px-4 md:px-6 flex flex-col md:flex-row justify-center">
           <div class="w-full p-4 text-zinc-100" id="instaSection">
             <Separator />
@@ -69,7 +69,7 @@
                 />
               </h2>
               <p
-                v-html="data.instaFeedDescripton ? data.instaFeedDescripton : ''"
+                v-html="data.instaFeedDescripton"
                 class="text-zinc-200 pb-4 text-center text-base tracking-tight sm:text-lg xl:text-xl/none"
               ></p>
               <PopularOnInstagram />
@@ -90,7 +90,7 @@
                 <FontAwesomeIcon :icon="faTwitter" class="text-zinc-100 h-9 sm:h-12 align-bottom" />
               </h2>
               <p
-                v-html="data.twitterFeedDescripton ? data.twitterFeedDescripton : ''"
+                v-html="data.twitterFeedDescripton"
                 class="text-zinc-200 pb-4 text-center text-base tracking-tight sm:text-lg xl:text-xl/none"
               ></p>
               <TwitterFeed />
@@ -105,7 +105,7 @@
                 <FontAwesomeIcon :icon="faTiktok" class="text-zinc-100 h-9 sm:h-12 align-center" />
               </h2>
               <p
-                v-html="data.tiktokFeedDescripton ? data.tiktokFeedDescripton : ''"
+                v-html="data.tiktokFeedDescripton"
                 class="text-zinc-200 pb-4 text-center text-base tracking-tight sm:text-lg xl:text-xl/none"
               ></p>
               <TikTokFeed />
@@ -119,6 +119,7 @@
 
 <script setup lang="ts">
 import { Vanta, VantaEffect } from '@/types/vanta';
+import { HomeData } from '@/types/home';
 import { faYoutube, faInstagram, faTwitter, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { gsap } from 'gsap';
@@ -141,7 +142,7 @@ declare const VANTA: Vanta;
 
 let dotEffect: VantaEffect | null = null;
 
-let data = await fetchData('home');
+let data: HomeData = await fetchData<HomeData>('home');
 
 /**
  * @function initDots()
@@ -210,6 +211,8 @@ onBeforeUnmount(() => {
   }
   document.body.classList.remove('overflow-x-hidden');
 });
+
+defineExpose({ data });
 </script>
 
 <style scoped>
