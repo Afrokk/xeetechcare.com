@@ -10,7 +10,7 @@
     <!-- TO DO -->
     <div class="flex flex-col items-center">
       <ul>
-        <li>YouTube</li>
+        <li><LinkButton link="https://example.com" text="Instagram" variant="variant1" /></li>
         <li>Instagram</li>
         <li>TikTok</li>
         <li>Affiliate Link</li>
