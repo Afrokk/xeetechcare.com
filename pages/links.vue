@@ -1,31 +1,43 @@
 <template>
   <section
-    class="bg-gray max-w-screen-xl mx-auto text-zinc-100 flex flex-col justify-center items-center min-h-screen px-4 sm:px-0 pt-36 sm:pt-20"
+    class="bg-gray pb-44 max-w-screen-xl mx-auto text-zinc-100 flex flex-col justify-center items-center min-h-screen px-4 sm:px-0 pt-36 sm:pt-20"
   >
-    <h1
-      class="text-5xl sm:text-5xl md:text-6xl xl:text-7xl/none mb-4 sm:mb-8 xsm:text-4xl mt-8 sm:mt-16 pb-4 text-zinc-200 text-center font-bold tracking-tighter"
+    <NuxtLink
+      to="/"
+      class="text-4xl sm:text-5xl md:text-6xl xl:text-7xl/none xsm:text-4xl pb-4 text-zinc-200 text-center font-bold tracking-tighter"
     >
       xee<span class="gradient-text">tech</span>care
-    </h1>
-    <!-- TO DO -->
-    <div class="flex flex-col items-center">
-      <ul>
-        <li><LinkButton link="https://example.com" text="Instagram" variant="variant1" /></li>
-        <li>Instagram</li>
-        <li>TikTok</li>
-        <li>Affiliate Link</li>
-      </ul>
+    </NuxtLink>
+    <div class="mb-14">
+      <SocialMediaLinks />
+    </div>
+    <div class="w-full sm:w-3/4" v-for="(link, index) in data.links" :key="index">
+      <LinkButton
+        :thumbnail-src="link.thumbnailSrc"
+        :link="link.link"
+        :main-text="link.mainText"
+        :sub-text="link.subText"
+        :variant="link.variant"
+      />
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import type { LinksData } from '@/types/link';
+
+const data: LinksData = await fetchData<LinksData>('links');
+
+definePageMeta({
+  layout: 'links',
+});
+
 useHead({
-  title: 'Links | XEETECHCARE',
+  title: 'Links in Bio | XEETECHCARE',
   meta: [
     {
       name: 'description',
-      content: 'Links to all social media.',
+      content: 'Links to all XEETECHCARE social media.',
     },
   ],
 });
@@ -33,4 +45,6 @@ useHead({
 onMounted(() => {
   animateGradientText();
 });
+
+defineExpose({ data });
 </script>
