@@ -24,7 +24,7 @@
       </section>
       <DownArrow
         :class="'text-zinc-300'"
-        :positionClass="'absolute bottom-20 left-1/2'"
+        :position-class="'absolute bottom-20 left-1/2'"
         @click="($refs.youtubeSection as HTMLElement)?.scrollIntoView({ behavior: 'smooth' })"
       />
     </div>
@@ -118,8 +118,8 @@
 </template>
 
 <script setup lang="ts">
-import { Vanta, VantaEffect } from '@/types/vanta';
-import { HomeData } from '@/types/home';
+import type { Vanta, VantaEffect } from '@/types/vanta';
+import type { HomeData } from '@/types/home';
 import { faYoutube, faInstagram, faTwitter, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { gsap } from 'gsap';
@@ -142,7 +142,7 @@ declare const VANTA: Vanta;
 
 let dotEffect: VantaEffect | null = null;
 
-let data: HomeData = await fetchData<HomeData>('home');
+const data: HomeData = await fetchData<HomeData>('home');
 
 /**
  * @function initDots()
@@ -181,9 +181,7 @@ function animateSection(
   start: string = 'top 75%',
   end: string = 'top 50%',
 ) {
-  if (!document.querySelector(selector)) {
-    return;
-  }
+  if (!document.querySelector(selector)) return;
   gsap.from(selector, {
     scrollTrigger: {
       trigger: selector,

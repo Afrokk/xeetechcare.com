@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import { Post } from '@/types/post';
+import type { Post } from '@/types/post';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { gsap } from 'gsap';

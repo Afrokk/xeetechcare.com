@@ -30,11 +30,11 @@
           ></h2>
           <div v-if="member.id !== 1" class="space-y-2 pb-12">
             <SocialMediaLinks
-              :instagramLink="{ link: member.socialMediaLinks.insta, show: true }"
+              :instagram-link="{ link: member.socialMediaLinks.insta, show: true }"
               :email="{ link: member.socialMediaLinks.email, show: true }"
-              :youtubeLink="{ show: false }"
-              :twitterLink="{ show: false }"
-              :tiktokLink="{ show: false }"
+              :youtube-link="{ show: false }"
+              :twitter-link="{ show: false }"
+              :tiktok-link="{ show: false }"
             />
           </div>
           <div v-else>
@@ -47,7 +47,7 @@
 </template>
 
 <script setup lang="ts">
-import { TeamData } from '@/types/team';
+import type { TeamData } from '@/types/team';
 import { gsap } from 'gsap';
 
 useHead({
@@ -60,7 +60,7 @@ useHead({
   ],
 });
 
-let data: TeamData = await fetchData<TeamData>('team');
+const data: TeamData = await fetchData<TeamData>('team');
 
 /**
  * @function animateCards()

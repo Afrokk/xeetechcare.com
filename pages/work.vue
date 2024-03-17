@@ -204,8 +204,7 @@
 </template>
 
 <script setup lang="ts">
-import { WorkData } from '@/types/work';
-import { ref, onMounted } from 'vue';
+import type { WorkData } from '@/types/work';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { faYoutube, faInstagram, faTwitter, faTiktok } from '@fortawesome/free-brands-svg-icons';
@@ -232,7 +231,7 @@ const marqueeLogos = [
   '/assets/img/brands/xiaomi.svg',
 ];
 
-let data: WorkData = await fetchData<WorkData>('work');
+const data: WorkData = await fetchData<WorkData>('work');
 
 useHead({
   title: 'Work With Us | XEETECHCARE',

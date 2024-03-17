@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { Reel } from '@/types/reel';
+import type { Reel } from '@/types/reel';
 
 const reel = ref<string[]>([
   'https://www.tiktok.com/@xeetechcare0/video/7340365410975485192',

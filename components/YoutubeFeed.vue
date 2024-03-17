@@ -41,7 +41,7 @@
 </template>
 
 <script setup lang="ts">
-import { Video } from '@/types/video';
+import type { Video } from '@/types/video';
 
 const videos = ref<Video[]>([]);
 const err = ref<string | null>(null);
