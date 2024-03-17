@@ -1,11 +1,7 @@
 <template>
-  <div class="bg-gray font-inter" id="app">
-    <NuxtLayout>
-      <Navbar />
-      <NuxtPage />
-      <Footer />
-    </NuxtLayout>
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <style>
