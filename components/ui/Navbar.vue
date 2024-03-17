@@ -60,7 +60,7 @@
               v-if="mobileMenuOpen"
               @click="!toggleMobileMenu"
               xmlns="http://www.w3.org/2000/svg"
-              class="w-14 pr-0 transition-transform transform text-black text-lg px-4 bg-slate-100 bg-opacity-85 rounded-full absolute top-5 right-5 z-10"
+              class="w-14 pr-0 transition-transform transform text-black text-lg px-4 rounded-full absolute top-5 right-5 z-10"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -75,7 +75,7 @@
           </button>
 
           <div
-            class="md:hidden uppercase tracking-wide fixed top-0 left-0 w-full h-full bg-slate-100 bg-opacity-85 transition-transform transform"
+            class="md:hidden uppercase tracking-wide fixed top-0 left-0 w-full h-full bg-slate-100 transition-transform transform"
             :class="{ 'translate-x-full': !mobileMenuOpen }"
           >
             <div class="flex flex-col justify-center h-full p-4 text-center text-black">
