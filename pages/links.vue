@@ -11,7 +11,7 @@
     <div class="mb-14">
       <SocialMediaLinks />
     </div>
-    <div class="w-full sm:w-3/4" v-for="(link, index) in data.links" :key="index">
+    <div class="w-full sm:w-3/4" v-for="(link, index) in data.links" :key="index" ref="linkButtons">
       <LinkButton
         :thumbnail-src="link.thumbnailSrc"
         :link="link.link"
@@ -25,8 +25,11 @@
 
 <script setup lang="ts">
 import type { LinksData } from '@/types/link';
+import { gsap } from 'gsap';
 
 const data: LinksData = await fetchData<LinksData>('links');
+
+const linkButtons = ref(null);
 
 definePageMeta({
   layout: 'links',
@@ -42,8 +45,27 @@ useHead({
   ],
 });
 
+/**
+ * Initializes the button transition animation.
+ */
+function initButtonTransition() {
+  gsap.fromTo(
+    linkButtons.value,
+    { y: 100, opacity: 0 },
+    {
+      duration: 0.5,
+      y: 0,
+      opacity: 1,
+      ease: 'power2.inOut',
+      stagger: 0.15,
+      clearProps: 'all',
+    },
+  );
+}
+
 onMounted(() => {
   animateGradientText();
+  initButtonTransition();
 });
 
 defineExpose({ data });

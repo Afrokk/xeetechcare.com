@@ -9,15 +9,15 @@
       <img
         v-if="thumbnailSrc"
         :src="thumbnailSrc"
-        class="w-16 h-16 object-cover rounded-full"
+        class="w-14 h-14 object-cover rounded-full"
         alt="Thumbnail"
       />
-      <div v-else class="w-16 h-16 rounded-full"></div>
+      <div v-else class="w-14 h-14 rounded-full"></div>
       <div class="flex-grow text-center overflow-hidden">
-        <h2 class="font-bold uppercase text-xs mb-1 xsm:text-base tracking-wide break-words">
+        <h2 class="font-bold uppercase text-xs mb-1 sm:text-base sm:tracking-tight break-words">
           {{ mainText }}
         </h2>
-        <p class="text-xs xsm:text-sm break-words">{{ subText }}</p>
+        <p class="text-xs sm:text-sm break-words">{{ subText }}</p>
       </div>
     </NuxtLink>
   </div>
@@ -64,30 +64,8 @@ function animateButtonGradient() {
   });
 }
 
-/**
- * Animates the link buttons.
- */
-function animateLinkButtons() {
-  gsap.fromTo(
-    '.link-btn',
-    {
-      y: 50,
-      opacity: 0,
-    },
-    {
-      duration: 0.2,
-      y: 0,
-      opacity: 1,
-      ease: 'elastic.inOut',
-      stagger: 0.15,
-      clearProps: 'all',
-    },
-  );
-}
-
 onMounted(() => {
   animateButtonGradient();
-  animateLinkButtons();
 });
 
 const variantClasses = computed(() => {
