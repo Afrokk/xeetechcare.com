@@ -1,4 +1,4 @@
-import { Post } from '@/types/post';
+import type { Post } from '@/types/post';
 
 /**
  * Retrieves a list of posts and sends them as a JSON response.

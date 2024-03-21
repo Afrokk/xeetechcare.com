@@ -1,4 +1,4 @@
-import { Video, Cache } from '@/types/video';
+import type { Video, Cache } from '@/types/video';
 
 const CACHE_VALIDITY_DURATION = 2 * 60 * 60 * 1000; // 2 hours
 const YOUTUBE_API_URL = 'https://www.googleapis.com/youtube/v3/playlistItems';
