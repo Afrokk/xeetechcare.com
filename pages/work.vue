@@ -215,7 +215,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 let isCountStarted = false;
 let statStartVals = ref(Array(6).fill(0));
-const statEndVals = [1720000, 125000, 72000, 750, 6000000, 4100000];
+const statEndVals = [1720000, 130000, 72000, 750, 6000000, 4100000];
 
 const marqueeLogos = [
   '/assets/img/brands/anker.svg',

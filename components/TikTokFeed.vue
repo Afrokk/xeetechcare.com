@@ -19,12 +19,12 @@
 import type { Reel } from '@/types/reel';
 
 const reel = ref<string[]>([
+  'https://www.tiktok.com/@xeetechcare0/video/7348931496729644296',
+  'https://www.tiktok.com/@xeetechcare0/video/7346298875247938824',
   'https://www.tiktok.com/@xeetechcare0/video/7340365410975485192',
   'https://www.tiktok.com/@xeetechcare0/video/7330282108134395154',
   'https://www.tiktok.com/@xeetechcare0/video/7339895279618903304',
   'https://www.tiktok.com/@xeetechcare0/video/7267641357299141906',
-  'https://www.tiktok.com/@xeetechcare0/video/7327393765499440402',
-  'https://www.tiktok.com/@xeetechcare0/video/7131796812633001217',
 ]);
 
 const reelData = ref<Reel[]>([]);
