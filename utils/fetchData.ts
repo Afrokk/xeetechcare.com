@@ -11,6 +11,6 @@ export default async function fetchData<T>(endpoint: string): Promise<T> {
     return result.data.value as T;
   } catch (error) {
     console.error('Failed to fetch data: ', error);
-    return null as any as T;
+    return null as T;
   }
 }
