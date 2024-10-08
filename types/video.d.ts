@@ -34,8 +34,3 @@ export type Video = {
   etag: string;
   kind: string;
 };
-
-export interface Cache {
-  videos: Video[] | null;
-  fetchTime: number | null;
-}

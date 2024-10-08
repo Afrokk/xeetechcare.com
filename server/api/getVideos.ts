@@ -1,24 +1,6 @@
-import type { Video, Cache } from '@/types/video';
+import type { Video } from '@/types/video';
 
-const CACHE_VALIDITY_DURATION = 2 * 60 * 60 * 1000; // 2 hours
 const YOUTUBE_API_URL = 'https://www.googleapis.com/youtube/v3/playlistItems';
-
-let cache: Cache = {
-  videos: null,
-  fetchTime: null,
-};
-
-/**
- * Checks if the cache is valid based on the fetch time and cache validity duration.
- * @returns A boolean value indicating whether the cache is valid or not.
- */
-function isCacheValid(): boolean {
-  return (
-    cache.videos !== null &&
-    cache.fetchTime !== null &&
-    Date.now() - cache.fetchTime < CACHE_VALIDITY_DURATION
-  );
-}
 
 /**
  * Fetches videos from YouTube API.
@@ -56,14 +38,7 @@ async function fetchVideos(): Promise<Video[]> {
 export default defineEventHandler(async (event) => {
   try {
     let videos: Video[];
-
-    if (isCacheValid()) {
-      videos = cache.videos!;
-    } else {
-      videos = await fetchVideos();
-      cache = { videos, fetchTime: Date.now() };
-    }
-
+    videos = await fetchVideos();
     event.node.res.statusCode = 200;
     event.node.res.setHeader('Content-Type', 'application/json');
     event.node.res.end(JSON.stringify(videos));
