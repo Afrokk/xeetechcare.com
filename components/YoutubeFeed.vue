@@ -24,7 +24,7 @@
         class="col-span-2 md:col-span-1"
       >
         <a
-          class="flex items-center justify-center text-center flex-col transform transition duration-100 ease-in-out hover:scale-105 hover:text-orange-500"
+          class="flex items-center justify-center text-center flex-col transform transition duration-100 ease-in-out hover:text-orange-500"
           :href="`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`"
           target="_blank"
         >
