@@ -21,7 +21,7 @@
         id="post"
         class="w-full md:w-1/2 mx-auto"
       >
-        <div class="video-responsive flex justify-center rounded-md" v-html="post.frame"></div>
+        <div class="video-responsive flex justify-center rounded-md" v-html="post.embedCode"></div>
         <div class="mt-4 text-sm sm:text-base md:text-sm">
           <div class="text-zinc-200 rounded-md flex items-center">
             <p class="font-bold text-orange-500 text-lg">
