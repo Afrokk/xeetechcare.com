@@ -1,5 +1,5 @@
 export interface Post {
-  frame: string;
+  embedCode: string;
   caption: string;
   likeCount?: string;
-};
+}
