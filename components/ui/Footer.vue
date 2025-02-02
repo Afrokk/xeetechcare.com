@@ -11,7 +11,11 @@
         />
       </div>
       <SocialMediaLinks :email="{ hide: true }" />
-      <p class="text-white mt-5">© 2024 XEETECHCARE. All Rights Reserved.</p>
+      <p class="text-white mt-5">© {{ currentYear }} XEETECHCARE. All Rights Reserved.</p>
     </div>
   </footer>
 </template>
+
+<script setup lang="ts">
+const currentYear = new Date().getFullYear();
+</script>
