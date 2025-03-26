@@ -12,4 +12,4 @@ export interface Reel {
   thumbnail_url: string;
   provider_url: string;
   provider_name: string;
-};
+}

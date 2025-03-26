@@ -16,9 +16,9 @@
 
 ## About The Project
 
-Bespoke website for tech YouTube channel xeetechcare built on Nuxt 3, Threejs and TypeScript. 
+Bespoke website for tech YouTube channel xeetechcare built on Nuxt 3, Threejs and TypeScript.
 
-Server-side rendered, integrated with YouTube, TikTok, Twitter and Instagram APIs. 
+Server-side rendered, integrated with YouTube, TikTok, Twitter and Instagram APIs.
 
 ## Built With
 
